@@ -1,0 +1,11 @@
+<div class="fixed-grid has-6-cols">
+  <p></p>
+  <div class="grid">
+    <%= link_to({ controller: 'crm/panel/sources' }, data: { turbo_frame: 'body', action: 'menu#enter' }, class: 'cell button is-fullwidth') do %>
+      <span><%= t('crm.panel.sources.index.title') %></span>
+    <% end %>
+    <%= link_to({ controller: 'crm/panel/tags' }, data: { turbo_frame: 'body', action: 'menu#enter' }, class: 'cell button is-fullwidth') do %>
+      <span><%= t('crm.panel.tags.index.title') %></span>
+    <% end %>
+  </div>
+</div>
