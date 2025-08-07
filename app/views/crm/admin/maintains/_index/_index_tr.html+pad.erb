@@ -2,36 +2,36 @@
   <%= yield %>
   <td>
     <div>
-      <%= link_to({ controller: 'maintain_logs', maintain_id: model.id }, aria: { label: t('crm.admin.maintain_logs.index.title') }, class: 'button is-small is-rounded is-light') do %>
+      <%= link_to({ controller: 'maintain_logs', maintain_id: model.id }, aria: { label: t('crm.admin.maintain_logs.index.title') }, class: 'button is-small is-borderless') do %>
         <i class="fa-solid fa-clock text-primary"></i>
       <% end %>
-      <%= button_to({ action: 'detach', id: model.id }, method: :patch, aria: { label: t('crm.admin.maintains.index.detach') }, class: 'button is-small is-rounded is-light', form: { data: { turbo_confirm: t('.destroy.confirm') } }) do %>
+      <%= button_to({ action: 'detach', id: model.id }, method: :patch, aria: { label: t('crm.admin.maintains.index.detach') }, class: 'button is-small is-borderless', form: { data: { turbo_confirm: t('.destroy.confirm') } }) do %>
         <i class="fa-solid fa-hand-holding text-success"></i>
       <% end %>
-      <%= link_to({ action: 'edit_transfer', id: model.id }, aria: { label: t('.transfer') }, class: 'button is-small is-rounded is-light') do %>
+      <%= link_to({ action: 'edit_transfer', id: model.id }, aria: { label: t('.transfer') }, class: 'button is-small is-borderless') do %>
         <i class="fa-solid fa-random text-warning"></i>
       <% end %>
-      <%= button_to({ action: 'show', id: model.id }, aria: { label: t('.show.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-circle-info text-info"></i>
+      <%= button_to({ action: 'show', id: model.id }, aria: { label: t('.show.title') }, class: 'button is-small is-borderless') do %>
+        <%= svg_tag 'circle-info', class: 'icon text-info' %>
       <% end %>
-      <%= button_to({ action: 'edit', id: model.id }, aria: { label: t('.edit.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-pencil text-link"></i>
+      <%= button_to({ action: 'edit', id: model.id }, aria: { label: t('.edit.title') }, class: 'button is-small is-borderless') do %>
+        <%= svg_tag 'pencil', class: 'icon text-link' %>
       <% end %>
-      <%= button_to({ action: 'destroy', id: model.id }, method: :delete, aria: { label: t('.destroy.title') }, class: 'button is-small is-rounded is-light', form: { data: { turbo_confirm: t('.destroy.confirm') } }) do %>
-        <i class="fa-solid fa-trash text-danger"></i>
+      <%= button_to({ action: 'destroy', id: model.id }, method: :delete, aria: { label: t('.destroy.title') }, class: 'button is-small is-borderless', form: { data: { turbo_confirm: t('.destroy.confirm') } }) do %>
+        <%= svg_tag 'trash', class: 'icon text-danger' %>
       <% end %>
     </div>
     <div>
-      <%= link_to({ controller: 'orders', maintain_id: model.id }, aria: { label: t('crm.admin.orders.index.title') }, class: 'button is-small is-rounded is-light') do %>
+      <%= link_to({ controller: 'orders', maintain_id: model.id }, aria: { label: t('crm.admin.orders.index.title') }, class: 'button is-small is-borderless') do %>
         <i class="fa-solid fa-shopping-cart text-primary"></i>
       <% end %>
-      <%= link_to({ controller: 'addresses', maintain_id: model.id }, aria: { label: t('crm.admin.addresses.index.title') }, class: 'button is-small is-rounded is-light') do %>
+      <%= link_to({ controller: 'addresses', maintain_id: model.id }, aria: { label: t('crm.admin.addresses.index.title') }, class: 'button is-small is-borderless') do %>
         <i class="fa-solid fa-location-dot"></i>
       <% end %>
-      <%= link_to({ controller: 'cards', maintain_id: model.id }, aria: { label: t('crm.admin.cards.index.title') }, class: 'button is-small is-rounded is-light') do %>
+      <%= link_to({ controller: 'cards', maintain_id: model.id }, aria: { label: t('crm.admin.cards.index.title') }, class: 'button is-small is-borderless') do %>
         <i class="fa-solid fa-credit-card"></i>
       <% end %>
-      <%= link_to({ controller: 'productions', maintain_id: model.id }, class: 'button is-small is-rounded is-light') do %>
+      <%= link_to({ controller: 'productions', maintain_id: model.id }, class: 'button is-small is-borderless') do %>
         <i class="fa-solid fa-store"></i>
         <span><%= t('crm.admin.productions.index.title') %></span>
       <% end %>

@@ -11,7 +11,7 @@
   <% end %>
 </td>
 <td>
-  <%= link_to({ controller: 'wallet_payments', wallet_id: model.id }, aria: { label: t('crm.admin.wallet_payments.index.title') }, class: 'button is-small is-rounded is-light') do %>
+  <%= link_to({ controller: 'wallet_payments', wallet_id: model.id }, aria: { label: t('crm.admin.wallet_payments.index.title') }, class: 'button is-small is-borderless') do %>
     <i class="fa-solid fa-credit-card"></i>
     <span class="ml-1"><%= model.expense_amount.to_fs(:rounded, precision: model.wallet_template.digit) %></span>
     <span><%= model.wallet_template.unit %></span>

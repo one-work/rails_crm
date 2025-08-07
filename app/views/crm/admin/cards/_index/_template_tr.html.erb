@@ -2,8 +2,8 @@
   <%= yield %>
   <td>
     <div data-show-target="item" class="visibility-hidden">
-      <%= button_to({ controller: 'trade/admin/card_templates', action: 'show', id: model.id }, aria: { label: t('.card_templates.show.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-circle-info text-info"></i>
+      <%= button_to({ controller: 'trade/admin/card_templates', action: 'show', id: model.id }, aria: { label: t('.card_templates.show.title') }, class: 'button is-small is-borderless') do %>
+        <%= svg_tag 'circle-info', class: 'icon text-info' %>
       <% end %>
     </div>
   </td>

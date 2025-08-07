@@ -2,33 +2,33 @@
 
   <td rowspan="<%= model.maintains.size + 1 %>">
     <div data-show-target="item" class="visibility-hidden">
-      <%= button_to({ action: 'edit_assign', id: model.id }, aria: { label: t('.edit_assign.title') }, class: 'button is-small is-rounded is-light') do %>
+      <%= button_to({ action: 'edit_assign', id: model.id }, aria: { label: t('.edit_assign.title') }, class: 'button is-small is-borderless') do %>
         <i class="fa-solid fa-hand-holding-usd text-success"></i>
       <% end %>
-      <%= button_to({ action: 'show', id: model.id }, aria: { label: t('.show.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-circle-info text-info"></i>
+      <%= button_to({ action: 'show', id: model.id }, aria: { label: t('.show.title') }, class: 'button is-small is-borderless') do %>
+        <%= svg_tag 'circle-info', class: 'icon text-info' %>
       <% end %>
-      <%= button_to({ action: 'edit', id: model.id }, aria: { label: t('.edit.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-pencil text-link"></i>
+      <%= button_to({ action: 'edit', id: model.id }, aria: { label: t('.edit.title') }, class: 'button is-small is-borderless') do %>
+        <%= svg_tag 'pencil', class: 'icon text-link' %>
       <% end %>
-      <%= button_to({ action: 'destroy', id: model.id }, method: :delete, aria: { label: t('.destroy.title') }, class: 'button is-small is-rounded is-light', form: { data: { turbo_confirm: t('.destroy.confirm') } }) do %>
-        <i class="fa-solid fa-trash text-danger"></i>
+      <%= button_to({ action: 'destroy', id: model.id }, method: :delete, aria: { label: t('.destroy.title') }, class: 'button is-small is-borderless', form: { data: { turbo_confirm: t('.destroy.confirm') } }) do %>
+        <%= svg_tag 'trash', class: 'icon text-danger' %>
       <% end %>
     </div>
     <div data-show-target="item" class="mt-2 visibility-hidden">
-      <%= link_to({ controller: 'orders', contact_id: model.id }, aria: { label: t('.orders.index.title') }, class: 'button is-small is-rounded is-light') do %>
+      <%= link_to({ controller: 'orders', contact_id: model.id }, aria: { label: t('.orders.index.title') }, class: 'button is-small is-borderless') do %>
         <i class="fa-solid fa-shopping-cart text-primary"></i>
       <% end %>
-      <%= link_to({ controller: 'addresses', contact_id: model.id }, aria: { label: t('.addresses.index.title') }, class: 'button is-small is-rounded is-light') do %>
+      <%= link_to({ controller: 'addresses', contact_id: model.id }, aria: { label: t('.addresses.index.title') }, class: 'button is-small is-borderless') do %>
         <i class="fa-solid fa-location-dot"></i>
       <% end %>
-      <%= link_to({ controller: 'wallets', contact_id: model.id }, aria: { label: t('.wallets.index.title') }, class: 'button is-small is-rounded is-light') do %>
+      <%= link_to({ controller: 'wallets', contact_id: model.id }, aria: { label: t('.wallets.index.title') }, class: 'button is-small is-borderless') do %>
         <i class="fa-solid fa-wallet"></i>
       <% end %>
-      <%= link_to({ controller: 'cards', contact_id: model.id }, aria: { label: t('.cards.index.title') }, class: 'button is-small is-rounded is-light') do %>
+      <%= link_to({ controller: 'cards', contact_id: model.id }, aria: { label: t('.cards.index.title') }, class: 'button is-small is-borderless') do %>
         <i class="fa-solid fa-credit-card"></i>
       <% end %>
-      <%= link_to({ controller: 'productions', contact_id: model.id }, aria: { label: t('.productions.index.title') }, class: 'button is-small is-rounded is-light') do %>
+      <%= link_to({ controller: 'productions', contact_id: model.id }, aria: { label: t('.productions.index.title') }, class: 'button is-small is-borderless') do %>
         <i class="fa-solid fa-store"></i>
       <% end %>
     </div>

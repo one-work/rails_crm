@@ -2,19 +2,19 @@
 
   <td>
     <div data-show-target="item" class="visibility-hidden">
-      <%= button_to({ action: 'show', id: model.id }, aria: { label: t('.show.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-circle-info text-info"></i>
+      <%= button_to({ action: 'show', id: model.id }, aria: { label: t('.show.title') }, class: 'button is-small is-borderless') do %>
+        <%= svg_tag 'circle-info', class: 'icon text-info' %>
       <% end %>
-      <%= button_to({ action: 'edit', id: model.id }, aria: { label: t('.edit.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-pencil text-link"></i>
+      <%= button_to({ action: 'edit', id: model.id }, aria: { label: t('.edit.title') }, class: 'button is-small is-borderless') do %>
+        <%= svg_tag 'pencil', class: 'icon text-link' %>
       <% end %>
     </div>
     <div data-show-target="item" class="visibility-hidden">
       <%= button_to({ action: 'payment_types', id: model.id }, class: 'button is-small is-rounded is-link') do %>
         <span><%= t('.payment_types.title') %></span>
       <% end %>
-      <%= button_to({ action: 'desk_edit', id: model.id }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-pencil text-link"></i>
+      <%= button_to({ action: 'desk_edit', id: model.id }, class: 'button is-small is-borderless') do %>
+        <%= svg_tag 'pencil', class: 'icon text-link' %>
         <span class="ml-1"><%= t('.desk_edit.title') %></span>
       <% end %>
     </div>

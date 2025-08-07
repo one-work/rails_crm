@@ -24,14 +24,14 @@
         <%= link_to agency.client.name %>
       </td>
       <td>
-        <%= link_to my_agency_path(agency), aria: { label: t('.show.title') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-          <i class="fa-solid fa-circle-info"></i>
+        <%= link_to my_agency_path(agency), aria: { label: t('.show.title') }, remote: true, class: 'button is-small is-borderless' do %>
+          <%= svg_tag 'circle-info', class: 'icon text-info' %>
         <% end %>
-        <%= link_to edit_my_agency_path(agency), aria: { label: t('.edit.title') }, remote: true, class: 'button is-small is-rounded is-light' do %>
+        <%= link_to edit_my_agency_path(agency), aria: { label: t('.edit.title') }, remote: true, class: 'button is-small is-borderless' do %>
           <i class="fa-solid fa-pencil"></i>
         <% end %>
-        <%= link_to my_agency_path(agency), method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.destroy.confirm') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-          <i class="fa-solid fa-trash"></i>
+        <%= link_to my_agency_path(agency), method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.destroy.confirm') }, remote: true, class: 'button is-small is-borderless' do %>
+          <%= svg_tag 'trash', class: 'icon' %>
         <% end %>
       </td>
     </tr>
