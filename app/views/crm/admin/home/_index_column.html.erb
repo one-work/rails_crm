@@ -1,30 +1,28 @@
-<div class="fixed-grid has-6-cols">
-  <p class="size-7 text-grey mb-1">客户与联系人</p>
-  <div class="grid">
-    <%= link_to({ controller: 'crm/admin/clients' }, class: 'cell button is-fullwidth') do %>
-      <span><%= t('crm.admin.clients.index.title') %></span>
-    <% end %>
-    <%= link_to({ controller: 'crm/admin/contacts' }, class: 'cell button is-fullwidth') do %>
-      <span><%= t('crm.admin.contacts.index.title') %></span>
-    <% end %>
-    <%= link_to({ controller: 'crm/admin/maintains' }, class: 'cell button is-fullwidth') do %>
-      <span><%= t('crm.admin.maintains.index.title') %></span>
-    <% end %>
-    <%# link_to t('crm.admin.maintains.public.title'), { controller: 'crm/admin/maintains', action: 'public' }, class: active_helper('maintains': 'public', active: 'is-active') %>
-  </div>
-  <p class="size-7 text-grey mb-1">配置</p>
-  <div class="grid">
-    <%= link_to({ controller: 'crm/admin/maintain_sources' }, class: 'cell button is-fullwidth') do %>
-      <span><%= t('crm.admin.maintain_sources.index.title') %></span>
-    <% end %>
-    <%= link_to({ controller: 'crm/admin/maintain_tags' }, class: 'cell button is-fullwidth') do %>
-      <span><%= t('crm.admin.maintain_tags.index.title') %></span>
-    <% end %>
-  </div>
-  <p class="size-7 text-grey mb-1">微信用户</p>
-  <div class="grid">
-    <%= link_to({ controller: 'crm/admin/wechat_users', action: 'online' }, class: 'cell button is-fullwidth') do %>
-      <span><%= t('crm.admin.wechat_users.online.title') %></span>
-    <% end %>
-  </div>
+<p class="size-7 text-grey mb-1">客户与联系人</p>
+<div class="grid">
+  <%= link_to({ controller: 'crm/admin/clients' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
+    <span><%= t('crm.admin.clients.index.title') %></span>
+  <% end %>
+  <%= link_to({ controller: 'crm/admin/contacts' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
+    <span><%= t('crm.admin.contacts.index.title') %></span>
+  <% end %>
+  <%= link_to({ controller: 'crm/admin/maintains' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
+    <span><%= t('crm.admin.maintains.index.title') %></span>
+  <% end %>
+  <%# link_to t('crm.admin.maintains.public.title'), { controller: 'crm/admin/maintains', action: 'public' }, class: active_helper('maintains': 'public', active: 'is-active') %>
+</div>
+<p class="size-7 text-grey mb-1">配置</p>
+<div class="grid">
+  <%= link_to({ controller: 'crm/admin/maintain_sources' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
+    <span><%= t('crm.admin.maintain_sources.index.title') %></span>
+  <% end %>
+  <%= link_to({ controller: 'crm/admin/maintain_tags' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
+    <span><%= t('crm.admin.maintain_tags.index.title') %></span>
+  <% end %>
+</div>
+<p class="size-7 text-grey mb-1">微信用户</p>
+<div class="grid">
+  <%= link_to({ controller: 'crm/admin/wechat_users', action: 'online' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
+    <span><%= t('crm.admin.wechat_users.online.title') %></span>
+  <% end %>
 </div>
