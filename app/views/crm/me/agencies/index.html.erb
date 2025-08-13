@@ -31,7 +31,7 @@
           <i class="fa-solid fa-pencil"></i>
         <% end %>
         <%= link_to my_agency_path(agency), method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.destroy.confirm') }, remote: true, class: 'button is-small is-borderless' do %>
-          <%= svg_tag 'trash', class: 'icon' %>
+          <%= svg_tag 'trash' %>
         <% end %>
       </td>
     </tr>
