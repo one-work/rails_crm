@@ -16,7 +16,7 @@
         <%= link_to maintain_source.name, filter_params(maintain_source_id: maintain_source.id), class: active_helper(maintain_source_id: maintain_source.id, active: 'button is-info', item: 'button is-light') %>
       <% end %>
       <%= button_to({ controller: 'maintain_sources', action: 'new' }, aria: { label: t('.maintain_sources.new.title') }, class: 'button is-rounded is-light', form: { id: 'source_add' }) do %>
-        <i class="fa-solid fa-plus"></i>
+        <%= svg_tag 'plus' %>
       <% end %>
     </td>
   </tr>
@@ -28,7 +28,7 @@
         <%= link_to maintain_tag.name, filter_params('maintain_logs.maintain_tag_id': maintain_tag.id), class: active_helper('maintain_logs.maintain_tag_id': maintain_tag.id, active: 'button is-info', item: 'button is-light') %>
       <% end %>
       <%= button_to({ controller: 'maintain_tags', action: 'new' }, aria: { label: t('.maintain_tags.new.title') }, class: 'button is-rounded is-light', form: { id: 'tag_add' }) do %>
-        <i class="fa-solid fa-plus"></i>
+        <%= svg_tag 'plus' %>
       <% end %>
     </td>
   </tr>
