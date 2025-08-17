@@ -14,7 +14,7 @@
   </div>
   <div class="level-right mt-0">
     <%= link_to({ controller: 'crm/me/cart/addresses', cart_id: @cart.id }, data: { turbo_frame: 'modal' }, class: 'level-item') do %>
-      <i class="fa-solid fa-angle-right"></i>
+      <%= svg_tag 'angle-right' %>
     <% end %>
   </div>
 </div>

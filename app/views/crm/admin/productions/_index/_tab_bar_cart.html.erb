@@ -12,7 +12,7 @@
     <div class="level-item">
       <%= link_to({ controller: 'carts', action: 'show', id: @cart.id }, class: 'button is-small is-primary is-radius') do %>
         <span>去购物车</span>
-        <i class="fa-solid fa-angle-right"></i>
+        <%= svg_tag 'angle-right' %>
       <% end %>
     </div>
   </div>
