@@ -1,11 +1,11 @@
 <div class="box as-bar">
   <% if current_state %>
     <%= link_to(current_state.referer, class: 'px-4') do %>
-      <i class="fa-solid fa-lg fa-fw-1 fa-angle-left"></i>
+      <%= svg_tag 'angle-left' %>
     <% end %>
   <% else %>
     <%= link_to({ action: 'list', source_id: params[:source_id] }, class: 'px-4') do %>
-      <i class="fa-solid fa-lg fa-fw-1 fa-angle-left"></i>
+      <%= svg_tag 'angle-left' %>
     <% end %>
   <% end %>
   <div class="weui-title">
