@@ -1,6 +1,6 @@
 <%= link_to({ controller: 'trade/me/items', action: 'show', id: @contact.source_contact.item_id }, class: 'media') do %>
   <div class="media-content">
-    <i class="fa-regular fa-bag-shopping fa-fw"></i>
+    <%= svg_tag 'bag-shopping' %>
     <span>查看订单</span>
   </div>
   <div class="media-right">
