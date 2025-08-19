@@ -10,7 +10,7 @@
       <span class="ml-1"><%= t('.show.title') %></span>
     <% end %>
     <%= button_to({ action: 'edit', id: model.id }, class: 'button is-small is-rounded is-link') do %>
-      <i class="fa-solid fa-pencil"></i>
+      <%= svg_tag 'pencil' %>
       <span class="ml-1"><%= t('.edit.title') %></span>
     <% end %>
   </td>

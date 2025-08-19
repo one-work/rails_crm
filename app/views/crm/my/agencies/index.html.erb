@@ -28,7 +28,7 @@
           <%= svg_tag 'circle-info', class: 'icon text-info' %>
         <% end %>
         <%= link_to edit_my_agency_path(agency), aria: { label: t('.edit.title') }, remote: true, class: 'button is-small is-borderless' do %>
-          <i class="fa-solid fa-pencil"></i>
+          <%= svg_tag 'pencil' %>
         <% end %>
         <%= link_to my_agency_path(agency), method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.destroy.confirm') }, remote: true, class: 'button is-small is-borderless' do %>
           <%= svg_tag 'trash' %>

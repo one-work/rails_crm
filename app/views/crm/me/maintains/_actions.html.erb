@@ -1,5 +1,5 @@
 <%= button_to({ action: 'edit', id: model.id }, class: 'cell has-column-centered') do %>
-  <i class="fa-solid fa-pencil"></i>
+  <%= svg_tag 'pencil' %>
   <span><%= t('.edit.title') %></span>
 <% end %>
 <%= link_to({ controller: 'cards', maintain_id: model.id }, class: 'cell has-column-centered') do %>
