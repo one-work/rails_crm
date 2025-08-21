@@ -4,7 +4,7 @@
     <span>查看订单</span>
   </div>
   <div class="media-right">
-    <i class="fa-solid fa-chevron-right"></i>
+    <%= svg_tag 'chevron-right' %>
   </div>
 <% end if @contact&.source_contact %>
 <% if request.variant.any?(:work_wechat) && @contact&.source_contact %>
@@ -23,7 +23,7 @@
     <span>分享到朋友圈</span>
   </div>
   <div class="media-right">
-    <i class="fa-solid fa-chevron-right"></i>
+    <%= svg_tag 'chevron-right' %>
   </div>
 </div>
 <% end %>
@@ -34,6 +34,6 @@
     <span><%= t('wechat.me.follows.index.title') %></span>
   </div>
   <div class="media-right">
-    <i class="fa-solid fa-chevron-right"></i>
+    <%= svg_tag 'chevron-right' %>
   </div>
 <% end %>
