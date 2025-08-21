@@ -7,30 +7,30 @@
   <span><%= t('.edit.title') %></span>
 <% end %>
 <%= link_to({ action: 'show', id: model.id }, class: 'cell has-column-centered') do %>
-  <%= svg_tag 'circle-info', class: 'icon text-info' %>
+  <%= svg_tag 'circle-info' %>
   <span><%= t('.show.title') %></span>
 <% end %>
 <%= link_to({ controller: 'cards', contact_id: model.id }, class: 'cell has-column-centered') do %>
-  <i class="fa-solid fa-tags"></i>
+  <%= svg_tag 'tags' %>
   <span><%= t('.cards.index.title') %></span>
 <% end %>
 <%= link_to({ controller: 'wallets', contact_id: model.id }, class: 'cell has-column-centered') do %>
-  <i class="fa-solid fa-wallet"></i>
+  <%= svg_tag 'wallet' %>
   <span><%= t('.wallets.index.title') %></span>
 <% end %>
 <%= link_to({ controller: 'addresses', contact_id: model.id }, class: 'cell has-column-centered') do %>
-  <i class="fa-solid fa-location-dot"></i>
+  <%= svg_tag 'location-dot' %>
   <span><%= t('.addresses.index.title') %></span>
 <% end %>
 <%= link_to({ controller: 'orders', contact_id: model.id }, class: 'cell has-column-centered') do %>
-  <i class="fa-solid fa-list-check"></i>
+  <%= svg_tag 'list-check' %>
   <span><%= t('.orders.index.title') %></span>
 <% end %>
 <%= link_to({ controller: 'productions', contact_id: model.id }, class: 'cell has-column-centered') do %>
-  <i class="fa-solid fa-store"></i>
+  <%= svg_tag 'store' %>
   <span><%= t('.productions.index.title') %></span>
 <% end %>
 <%= link_to({ controller: 'facilitates', contact_id: model.id }, class: 'cell has-column-centered') do %>
-  <i class="fa-solid fa-user-ninja"></i>
+  <%= svg_tag 'user-ninja' %>
   <span><%= t('.facilitates.index.title') %></span>
 <% end %>

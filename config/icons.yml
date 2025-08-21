@@ -3,6 +3,11 @@ regular:
   - angle-right
   - chart-line
   - check
+  - list-check
+  - location-dot
   - pencil
+  - store
   - tags
+  - user-ninja
   - users
+  - wallet
