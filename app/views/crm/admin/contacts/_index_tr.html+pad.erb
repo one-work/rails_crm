@@ -6,7 +6,7 @@
       <span class="ml-1"><%= t('.productions.index.title') %></span>
     <% end %>
     <%= button_to({ action: 'show', id: model.id }, class: 'button is-small is-rounded is-info') do %>
-      <%= svg_tag 'circle-info', class: 'icon text-info' %>
+      <%= svg_tag 'eye', class: 'icon text-info' %>
       <span class="ml-1"><%= t('.show.title') %></span>
     <% end %>
     <%= button_to({ action: 'edit', id: model.id }, class: 'button is-small is-rounded is-link') do %>
