@@ -3,6 +3,6 @@
   <span class="ml-1"><%= t('crm.admin.wallets.index.title') %></span>
 <% end %>
 <%= button_to({ action: 'actions', id: @maintain.id }, class: 'button is-info') do %>
-  <i class="fa-solid fa-lg fa-ellipsis-h"></i>
+  <%= svg_tag 'ellipsis-vertical' %>
   <span>更多</span>
 <% end %>
