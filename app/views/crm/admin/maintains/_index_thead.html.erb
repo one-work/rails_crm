@@ -14,7 +14,7 @@
   <div>
     <%= Crm::Maintain.human_attribute_name(:maintain_source_id) %>
     <%= link_to({ controller: 'maintain_sources' }, aria: { label: '来源设置' }, target: '_blank') do %>
-      <i class="fa-solid fa-cog"></i>
+      <%= svg_tag 'gear' %>
     <% end %>
   </div>
   <div>
@@ -24,7 +24,7 @@
 <th>
   <%= Crm::Note.human_attribute_name(:maintain_tag_id) %>
   <%= link_to({ controller: 'maintain_tags' }, aria: { label: '标签设置' }, target: '_blank') do %>
-    <i class="fa-solid fa-cog"></i>
+    <%= svg_tag 'gear' %>
   <% end %>
 </th>
 <th>
