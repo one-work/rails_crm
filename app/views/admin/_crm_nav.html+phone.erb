@@ -2,18 +2,20 @@
   <div class="box-body">
     <span class="size-7 has-border-left-primary"><%= t('crm.admin.title') %></span>
   </div>
-  <div class="columns is-4-mobile flex is-vcentered is-centered m-0 is-shadow" data-empty-target="content">
-    <%= link_to({ controller: 'crm/admin/contacts' }, class: 'column has-column-centered') do %>
-      <div class="text-primary">
-        <%= svg_tag 'users', class: 'icon is-medium' %>
-      </div>
-      <div class="text-grey size-7 mt-1"><%= t('crm.admin.contacts.index.title') %></div>
-    <% end %>
-    <%= link_to({ controller: 'crm/admin/maintain_sources' }, class: 'column has-column-centered') do %>
-      <div class="text-primary">
-        <%= svg_tag 'tags', class: 'icon is-medium' %>
-      </div>
-      <div class="text-grey size-7 mt-1"><%= t('crm.admin.maintain_sources.index.title') %></div>
-    <% end %>
+  <div class="fixed-grid has-4-cols is-shadow p-3">
+    <div class="grid">
+      <%= link_to({ controller: 'crm/admin/contacts' }, class: 'cell has-column-centered') do %>
+        <div class="text-primary">
+          <%= svg_tag 'users', class: 'icon is-medium' %>
+        </div>
+        <div class="text-grey size-7 mt-1"><%= t('crm.admin.contacts.index.title') %></div>
+      <% end %>
+      <%= link_to({ controller: 'crm/admin/maintain_sources' }, class: 'cell has-column-centered') do %>
+        <div class="text-primary">
+          <%= svg_tag 'tags', class: 'icon is-medium' %>
+        </div>
+        <div class="text-grey size-7 mt-1"><%= t('crm.admin.maintain_sources.index.title') %></div>
+      <% end %>
+    </div>
   </div>
 </div>
