@@ -1,6 +1,8 @@
 regular:
   - angle-left
   - angle-right
+  - cards-blank
+  - cart-shopping
   - chart-line
   - check
   - ellipsis-vertical

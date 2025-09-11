@@ -3,11 +3,11 @@
   <span><%= t('.edit.title') %></span>
 <% end %>
 <%= link_to({ controller: 'cards', maintain_id: model.id }, class: 'cell has-column-centered') do %>
-  <i class="fa-solid fa-cards-blank"></i>
+  <%= svg_tag 'cards-blank' %>
   <span><%= t('crm.admin.cards.index.title') %></span>
 <% end %>
 <%= link_to({ controller: 'wallets', maintain_id: model.id }, class: 'cell has-column-centered') do %>
-  <i class="fa-solid fa-wallet"></i>
+  <%= svg_tag 'wallet' %>
   <span><%= t('crm.admin.wallets.index.title') %></span>
 <% end %>
 <%= link_to({ controller: 'addresses', maintain_id: model.id }, class: 'cell has-column-centered') do %>
@@ -15,18 +15,18 @@
   <span><%= t('crm.admin.addresses.index.title') %></span>
 <% end %>
 <%= link_to({ controller: 'carts', maintain_id: model.id }, class: 'cell has-column-centered') do %>
-  <i class="fa-solid fa-cart-shopping"></i>
+  <%= svg_tag 'cart-shopping' %>
   <span><%= t('crm.admin.carts.index.title') %></span>
 <% end %>
 <%= link_to({ controller: 'orders', maintain_id: model.id }, class: 'cell has-column-centered') do %>
-  <i class="fa-solid fa-list-check"></i>
+  <%= svg_tag 'list-check' %>
   <span><%= t('crm.admin.orders.index.title') %></span>
 <% end %>
 <%= link_to({ controller: 'facilitates', maintain_id: model.id }, class: 'cell has-column-centered') do %>
-  <i class="fa-solid fa-user-ninja"></i>
+  <%= svg_tag 'user-ninja' %>
   <span><%= t('crm.admin.facilitates.index.title') %></span>
 <% end %>
 <%= link_to({ controller: 'productions', maintain_id: model.id }, class: 'cell has-column-centered') do %>
-  <i class="fa-solid fa-store"></i>
+  <%= svg_tag 'store' %>
   <span><%= t('crm.admin.productions.index.title') %></span>
 <% end %>
