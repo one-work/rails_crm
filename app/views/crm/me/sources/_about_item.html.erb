@@ -30,7 +30,7 @@
 <%= render partial: 'order', locals: { source: @source } unless @contact&.source_contact %>
 <%= link_to({ controller: 'wechat/me/follows', state: @source.name }, class: 'media') do %>
   <div class="media-content">
-    <i class="fa-solid fa-fw fa-users-line"></i>
+    <%= svg_tag 'users-line' %>
     <span><%= t('wechat.me.follows.index.title') %></span>
   </div>
   <div class="media-right">
