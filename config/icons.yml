@@ -21,3 +21,5 @@ light:
   - users
   - users-line
   - wallet
+regular:
+  - angle-left
