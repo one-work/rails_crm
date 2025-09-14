@@ -1,11 +1,11 @@
 <div class="box as-bar">
   <% if current_state %>
     <%= link_to(current_state.referer, class: 'px-4') do %>
-      <%= svg_tag 'angle-left' %>
+      <%= svg_tag 'angle-left', kind: 'regular' %>
     <% end %>
   <% else %>
     <%= link_to({ controller: 'contacts', action: 'show', id: @client.id }, class: 'px-4') do %>
-      <%= svg_tag 'angle-left' %>
+      <%= svg_tag 'angle-left', kind: 'regular' %>
     <% end %>
   <% end %>
   <div class="weui-title">
