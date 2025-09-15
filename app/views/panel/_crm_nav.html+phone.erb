@@ -1,20 +1,18 @@
 <div class="box is-padding-less">
   <div class="box-header">
-    <i class="fa-solid fa-fw fa-chart-line text-primary"></i>
-    <span><%= t('crm.panel.title') %></span>
+    <div>
+      <%= svg_tag 'chart-line' %>
+      <span><%= t('crm.panel.title') %></span>
+    </div>
   </div>
-  <div class="weui-panel__bd">
-    <div class="columns is-4-mobile flex is-vcentered is-centered m-0 is-shadow" data-empty-target="content">
-      <%= link_to({ controller: 'crm/panel/sources' }, class: 'column has-column-centered') do %>
-        <div class="text-primary">
-          <i class="fa-solid fa-fw fa-xl fa-users"></i>
-        </div>
+  <div class="fixed-grid has-3-cols is-shadow p-3">
+    <div class="grid">
+      <%= link_to({ controller: 'crm/panel/sources' }, class: 'cell has-column-centered') do %>
+        <%= svg_tag 'users', class: 'icon is-medium' %>
         <div class="text-grey size-7 mt-1"><%= t('crm.panel.sources.index.title') %></div>
       <% end %>
-      <%= link_to({ controller: 'crm/panel/tags' }, class: 'column has-column-centered') do %>
-        <div class="text-primary">
-          <i class="fa-solid fa-fw fa-xl fa-tags"></i>
-        </div>
+      <%= link_to({ controller: 'crm/panel/tags' }, class: 'cell has-column-centered') do %>
+        <%= svg_tag 'tags', class: 'icon is-medium' %>
         <div class="text-grey size-7 mt-1"><%= t('crm.panel.tags.index.title') %></div>
       <% end %>
     </div>
