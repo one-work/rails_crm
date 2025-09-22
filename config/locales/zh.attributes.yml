@@ -3,6 +3,7 @@ zh:
     attributes:
       crm/contact:
         identity: 联系方式
+        name: 姓名
       crm/maintain:
         state: 状态
         maintain_source_id: 客户来源

@@ -5,15 +5,15 @@
   <div class="fixed-grid has-4-cols is-shadow p-3">
     <div class="grid">
       <%= link_to({ controller: 'crm/admin/contacts' }, class: 'cell has-column-centered') do %>
-        <div class="text-primary">
-          <%= svg_tag 'users', class: 'icon is-medium' %>
-        </div>
+        <%= svg_tag 'users', class: 'icon is-medium text-primary' %>
         <div class="text-grey size-7 mt-1"><%= t('crm.admin.contacts.index.title') %></div>
       <% end %>
+      <%= link_to({ controller: 'crm/admin/clients' }, class: 'cell has-column-centered') do %>
+        <%= svg_tag 'buildings', class: 'icon is-medium text-primary' %>
+        <div class="text-grey size-7 mt-1"><%= t('crm.admin.clients.index.title') %></div>
+      <% end %>
       <%= link_to({ controller: 'crm/admin/maintain_sources' }, class: 'cell has-column-centered') do %>
-        <div class="text-primary">
-          <%= svg_tag 'tags', class: 'icon is-medium' %>
-        </div>
+        <%= svg_tag 'tags', class: 'icon is-medium text-primary' %>
         <div class="text-grey size-7 mt-1"><%= t('crm.admin.maintain_sources.index.title') %></div>
       <% end %>
     </div>

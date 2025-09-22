@@ -1,6 +1,7 @@
 light:
   - angle-left
   - angle-right
+  - buildings
   - cards-blank
   - cart-shopping
   - chart-line
