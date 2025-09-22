@@ -1,22 +1,19 @@
-<div class="box as-bar">
-  <%= link_to({ controller: 'trade/agent/payments', action: 'uncheck' }, class: 'px-4') do %>
-    <%= svg_tag 'angle-left', kind: 'regular' %>
-  <% end %>
+<%= render layout: 'top_bar_left' do %>
   <div class="weui-title flex-direction-column">
-  <% if params[:produce_on] %>
-    <div>
-      <span class="text-weight-semibold"><%= params[:produce_on] %></span>
-      <span><%= params[:produce_on].to_date.to_fs(:week) if params[:produce_on].present? %></span>
-    </div>
-  <% elsif params[:payment_id] %>
-    <div>
-      <span><%= @payment.total_amount %></span>
-    </div>
-  <% end %>
+    <% if params[:produce_on] %>
+      <div>
+        <span class="text-weight-semibold"><%= params[:produce_on] %></span>
+        <span><%= params[:produce_on].to_date.to_fs(:week) if params[:produce_on].present? %></span>
+      </div>
+    <% elsif params[:payment_id] %>
+      <div>
+        <span><%= @payment.total_amount %></span>
+      </div>
+    <% end %>
     <div>
       <span class="text-weight-semibold"><%= @scene&.title %></span>
       <span><%= @client.name %></span>
     </div>
   </div>
   <i class="px-5"></i>
-</div>
+<% end %>
