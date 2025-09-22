@@ -1,9 +1,3 @@
-<div class="box as-bar">
-  <%= link_to({ controller: 'maintains' }, class: 'px-4') do %>
-    <%= svg_tag 'angle-left', kind: 'regular' %>
-  <% end %>
-  <div class="weui-title">
-    <span><%= @maintain.name %></span>
-  </div>
-  <i class="px-5"></i>
-</div>
+<%= render layout: 'top_bar_layout' do %>
+  <span><%= @client.name %></span>
+<% end %>
