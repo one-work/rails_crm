@@ -12,12 +12,12 @@
 </td>
 <td>
   <%= link_to({ controller: 'wallet_payments', wallet_id: model.id }, aria: { label: t('crm.admin.wallet_payments.index.title') }, class: 'button is-small is-borderless') do %>
-    <i class="fa-solid fa-credit-card"></i>
+    <%= svg_tag 'credit-card' %>
     <span class="ml-1"><%= model.expense_amount.to_fs(:rounded, precision: model.wallet_template.digit) %></span>
     <span><%= model.wallet_template.unit %></span>
   <% end %>
   <%= link_to({ controller: 'trade/admin/payouts', wallet_id: model.id }) do %>
-    <i class="fa-solid fa-wallet"></i>
+    <%= svg_tag 'wallet' %>
   <% end %>
 </td>
 <td>

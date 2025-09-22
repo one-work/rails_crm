@@ -2,11 +2,11 @@
   <%= yield %>
   <td>
     <%= link_to({ controller: 'productions', contact_id: model.id }, class: 'button is-small is-rounded is-danger') do %>
-      <i class="fa-solid fa-store"></i>
+      <%= svg_tag 'store' %>
       <span class="ml-1"><%= t('.productions.index.title') %></span>
     <% end %>
     <%= button_to({ action: 'show', id: model.id }, class: 'button is-small is-rounded is-info') do %>
-      <%= svg_tag 'eye', class: 'icon text-info' %>
+      <%= svg_tag 'eye' %>
       <span class="ml-1"><%= t('.show.title') %></span>
     <% end %>
     <%= button_to({ action: 'edit', id: model.id }, class: 'button is-small is-rounded is-link') do %>

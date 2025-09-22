@@ -26,13 +26,13 @@
         <i class="fa-solid fa-shopping-cart text-primary"></i>
       <% end %>
       <%= link_to({ controller: 'addresses', maintain_id: model.id }, aria: { label: t('crm.admin.addresses.index.title') }, class: 'button is-small is-borderless') do %>
-        <i class="fa-solid fa-location-dot"></i>
+        <%= svg_tag 'location-dot' %>
       <% end %>
       <%= link_to({ controller: 'cards', maintain_id: model.id }, aria: { label: t('crm.admin.cards.index.title') }, class: 'button is-small is-borderless') do %>
-        <i class="fa-solid fa-credit-card"></i>
+        <%= svg_tag 'credit-card' %>
       <% end %>
       <%= link_to({ controller: 'productions', maintain_id: model.id }, class: 'button is-small is-borderless') do %>
-        <i class="fa-solid fa-store"></i>
+        <%= svg_tag 'store' %>
         <span><%= t('crm.admin.productions.index.title') %></span>
       <% end %>
     </div>

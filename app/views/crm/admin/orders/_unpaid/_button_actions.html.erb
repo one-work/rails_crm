@@ -16,7 +16,7 @@
   <%= form_with url: { controller: 'wallet_payments', action: 'batch', wallet_id: wallet.id }, class: 'button_to' do |f| %>
     <%= f.hidden_field :ids, data: { form_target: 'ids' } %>
     <%= button_tag data: { form_target: 'submit' }, disabled: true, class: 'button is-warning' do %>
-      <i class="fa-solid fa-wallet"></i>
+      <%= svg_tag 'wallet' %>
       <span class="ml-1"><%= wallet.template_name %></span>
       <span class="ml-1"><%= wallet.amount %></span>
     <% end %>

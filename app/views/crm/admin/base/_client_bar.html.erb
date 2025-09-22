@@ -28,25 +28,25 @@
     </li>
     <li class="<%= active_helper(controllers: 'wallets', active: 'is-active') %>">
       <%= link_to({ controller: 'wallets', client_id: @client.id }) do %>
-        <i class="fa-solid fa-wallet"></i>
+        <%= svg_tag 'wallet' %>
         <span class="ml-1"><%= t('.wallets.index.title') %></span>
       <% end %>
     </li>
     <li class="<%= active_helper(controllers: 'cards', active: 'is-active') %>">
       <%= link_to({ controller: 'cards', client_id: @client.id }) do %>
-        <i class="fa-solid fa-credit-card"></i>
+        <%= svg_tag 'credit-card' %>
         <span class="ml-1"><%= t('.cards.index.title') %></span>
       <% end %>
     </li>
     <li class="<%= active_helper(controllers: 'addresses', active: 'is-active') %>">
       <%= link_to({ controller: 'addresses', client_id: @client.id }) do %>
-        <i class="fa-solid fa-location-dot"></i>
+        <%= svg_tag 'location-dot' %>
         <span class="ml-1"><%= t('.addresses.index.title') %></span>
       <% end %>
     </li>
     <li class="<%= active_helper(controllers: 'productions', active: 'is-active') %>">
       <%= link_to({ controller: 'productions', client_id: @client.id }) do %>
-        <i class="fa-solid fa-store"></i>
+        <%= svg_tag 'store' %>
         <span class="ml-1"><%= t('.productions.index.title') %></span>
       <% end %>
     </li>

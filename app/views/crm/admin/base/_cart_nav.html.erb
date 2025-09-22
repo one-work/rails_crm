@@ -4,7 +4,7 @@
   </div>
   <div class="level-right">
     <%= link_to({ controller: 'crm/admin/orders', action: 'cart', current_cart_id: cart.id, **params.permit!.slice('factory_taxon_id') }, class: 'button is-success') do %>
-      <i class="fa-solid fa-credit-card"></i>
+      <%= svg_tag 'credit-card' %>
       <span class="ml-1"><%= t('.orders.cart.title') %></span>
     <% end %>
   </div>
