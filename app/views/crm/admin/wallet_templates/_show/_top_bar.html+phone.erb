@@ -1,8 +1,8 @@
-<div class="box as-bar">
+<div class="as-bar">
   <%= link_to({ action: 'index' }, class: 'px-4') do %>
     <%= svg_tag 'angle-left', kind: 'regular' %>
   <% end %>
-  <div class="weui-title">
+  <div class="bar-title">
     <span><%= @maintain.remark %></span>
     <span class="ml-1"><%= @wallet_template.name %></span>
   </div>

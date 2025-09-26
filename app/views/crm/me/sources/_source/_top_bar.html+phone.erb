@@ -1,4 +1,4 @@
-<div class="box as-bar">
+<div class="as-bar">
   <% if current_state %>
     <%= link_to(current_state.referer, class: 'px-4') do %>
       <%= svg_tag 'angle-left', kind: 'regular' %>
@@ -8,7 +8,7 @@
       <%= svg_tag 'angle-left', kind: 'regular' %>
     <% end %>
   <% end %>
-  <div class="weui-title">
+  <div class="bar-title">
     <span><%= @source.name %></span>
   </div>
   <i class="px-5"></i>

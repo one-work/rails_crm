@@ -1,4 +1,4 @@
-<div class="box as-bar">
+<div class="as-bar">
   <% if @order.items[0].good_type == 'Trade::Advance' %>
     <%= link_to({ controller: 'wallet_templates', action: 'show', id: @order.items[0].good.wallet_template_id }, class: 'px-4') do %>
       <%= svg_tag 'angle-left', kind: 'regular' %>
@@ -8,7 +8,7 @@
       <%= svg_tag 'angle-left', kind: 'regular' %>
     <% end %>
   <% end %>
-  <div class="weui-title">
+  <div class="bar-title">
     <span><%= @maintain.remark %></span>
     <span class="ml-1"><%= t('.title') %></span>
   </div>
