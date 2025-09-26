@@ -18,9 +18,3 @@
 <dl class="as-show as-boxed">
   <%= render 'show_table' %>
 </dl>
-
-<% if @scene %>
-<div class="box">
-  <%= image_tag @scene.qrcode_data_url, class: 'image is-128x128' %>
-</div>
-<% end %>

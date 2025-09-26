@@ -15,6 +15,11 @@
   <%= render 'show_table' %>
 </dl>
 
-<div class="box">
-  <%= image_tag @contact.qrcode_bind_url, class: 'image is-128x128' %>
+<div class="media as-boxed">
+  <div class="media-left">
+    <%= image_tag @contact.qrcode_bind_url, class: 'image is-128x128' %>
+  </div>
+  <div class="media-content">
+    <p>绑定二维码</p>
+  </div>
 </div>
