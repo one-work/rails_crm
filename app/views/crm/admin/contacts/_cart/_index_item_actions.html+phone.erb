@@ -3,8 +3,12 @@
     <%= yield %>
   <% end %>
   <div class="media-right">
+  <% if @cart.contact_id == model.id %>
+    <%= svg_tag 'check', class: 'icon is-small text-success' %>
+  <% else %>
     <%= button_to({ action: 'cart_update', id: model.id }, class: 'button is-borderless') do %>
       <%= svg_tag 'ellipsis' %>
     <% end %>
+  <% end %>
   </div>
 </div>
