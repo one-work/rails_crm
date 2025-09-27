@@ -16,6 +16,8 @@ zh:
       contacts:
         index:
           title: 联系人
+        cart:
+          title: 选择联系人
       maintains:
         index:
           title: 客户列表

@@ -109,6 +109,7 @@ Rails.application.routes.draw do
         post :create_detect
       end
       member do
+        post 'cart/:cart_id' => :cart_update
         match :edit_assign, via: [:get, :post]
         patch :update_assign
       end

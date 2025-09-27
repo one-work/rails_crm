@@ -2,10 +2,11 @@ module Crm
   class Admin::ContactsController < Admin::BaseController
     before_action :set_contact, only: [
       :show, :edit, :update, :destroy, :actions,
-      :edit_assign, :update_assign
+      :edit_assign, :update_assign, :cart_update
     ]
     before_action :set_scene, only: [:show]
     before_action :set_new_contact, only: [:new, :create]
+    before_action :set_cart, only: [:cart, :cart_update]
 
     def index
       q_params = {}
@@ -13,6 +14,18 @@ module Crm
       q_params.merge! params.permit(:identity, 'name-like')
 
       @contacts = Contact.includes(:maintains, :pending_members).default_where(q_params).order(id: :desc).page(params[:page])
+    end
+
+    def cart
+      q_params = {}
+      q_params.merge! default_params
+      q_params.merge! params.permit(:identity, 'name-like')
+
+      @contacts = Contact.default_where(q_params).order(id: :desc).page(params[:page])
+    end
+
+    def cart_update
+      @cart
     end
 
     def maintain
@@ -63,6 +76,10 @@ module Crm
 
     def set_contact
       @client = Contact.default_where(default_params).find params[:id]
+    end
+
+    def set_cart
+      @cart = Cart.find params[:cart_id]
     end
 
     def set_scene
