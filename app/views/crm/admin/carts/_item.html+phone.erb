@@ -1,0 +1,29 @@
+<%= render layout: 'good_layout_with_right', locals: { model: model } do %>
+  <div class="media-content">
+    <h4><%= model.good_name %></h4>
+    <div class="tags">
+    <% if model.good.respond_to?(:parts) %>
+      <% model.good.parts.each do |part| %>
+        <span class="tag"><%= part.name %></span>
+      <% end %>
+    <% end %>
+    </div>
+    <div class="has-v-centered">
+      <% if model.vip_code.present? %>
+        <div class="tags has-addons is-price control m-0" style="display: inline-flex">
+          <div class="tag is-danger">
+            <i class="fa-solid fa-badge-check"></i>
+            <span style="padding-left: 1px"><%= model.vip_code %></span>
+          </div>
+          <span class="tag is-right"><%= model.single_price.to_money.format.html_safe %></span>
+        </div>
+        <span class="text-through"><%= model.good.price.to_money.format.html_safe %></span>
+      <% else %>
+        <span><%= model.single_price.to_money.format.html_safe %></span>
+      <% end %>
+    </div>
+  </div>
+  <div class="media-right as-x">
+    <%= render partial: 'cart_item_big', locals: { item: model, cart: @cart, item_con: controller_path.sub('carts', 'items') } %>
+  </div>
+<% end %>
