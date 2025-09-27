@@ -25,8 +25,8 @@ module Crm
     end
 
     def cart_update
-      @cart.sync_contact_to_items(@contact)
-      @contact_cart = Trade::Cart.get_cart(params, agent_id: current_member.id, contact_id: @contact.id, **default_params)
+      @cart.sync_contact_to_items(@client)
+      @contact_cart = Trade::Cart.get_cart(params, agent_id: current_member.id, contact_id: @client.id, **default_params)
     end
 
     def maintain
