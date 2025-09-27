@@ -104,6 +104,7 @@ Rails.application.routes.draw do
     resources :contacts do
       concerns :maintainable
       collection do
+        get 'cart/:cart_id' => :cart
         match :new_detect, via: [:get, :post]
         post :create_detect
       end
