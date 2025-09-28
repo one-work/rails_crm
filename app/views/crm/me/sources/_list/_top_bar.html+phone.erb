@@ -1,6 +1,6 @@
 <div class="as-bar">
   <% if current_state %>
-    <%= link_to(current_state.referer, class: 'px-4') do %>
+    <%= link_to(current_state.prev_path, class: 'px-4') do %>
       <%= svg_tag 'angle-left', kind: 'regular' %>
     <% end %>
   <% else %>
