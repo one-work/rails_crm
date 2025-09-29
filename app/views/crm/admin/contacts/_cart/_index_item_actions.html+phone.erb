@@ -1,14 +1,19 @@
-<div id="tr_<%= model.id %>" class="media">
-  <%= link_to({ action: 'show', id: model.id }, class: 'media-content') do %>
-    <%= yield %>
-  <% end %>
-  <div class="media-right">
-  <% if @cart.contact_id == model.id %>
-    <%= svg_tag 'check', class: 'icon is-small text-success' %>
-  <% else %>
-    <%= button_to({ action: 'cart_update', id: model.id }, class: 'button is-borderless') do %>
-      <%= svg_tag 'ellipsis' %>
-    <% end %>
-  <% end %>
+<% if @cart.contact_id == model.id %>
+  <div class="media">
+    <div class="media-content">
+      <%= yield %>
+    </div>
+    <div class="media-right">
+      <%= svg_tag 'check', class: 'icon is-small text-success' %>
+    </div>
   </div>
-</div>
+<% else %>
+  <%= button_to({ action: 'cart_update', id: model.id }, class: 'media', form: { class: 'media' }) do %>
+    <div class="media-content">
+      <%= yield %>
+    </div>
+    <div class="media-right">
+      <%= svg_tag 'ellipsis' %>
+    </div>
+  <% end %>
+<% end %>
