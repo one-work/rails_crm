@@ -1,21 +1,21 @@
-<%= button_to({ action: 'destroy' }, method: :delete, class: 'text-danger', form: { data: { turbo_confirm: t('.destroy.confirm') }, class: 'cell weui-actionsheet__cell_warn' }) do %>
+<%= button_to({ action: 'destroy' }, method: :delete, form: { data: { turbo_confirm: t('.destroy.confirm') }, class: 'cell has-column-centered' }) do %>
   <%= svg_tag 'trash' %>
   <span><%= t('.destroy.title') %></span>
 <% end %>
-<%= button_to({ action: 'edit' }, class: 'cell') do %>
+<%= button_to({ action: 'edit' }, class: 'cell has-column-centered') do %>
   <%= svg_tag 'pencil' %>
   <span><%= t('.edit.title') %></span>
 <% end %>
-<%= link_to({ action: 'show' }, class: 'cell') do %>
-  <%= svg_tag 'eye', class: 'icon text-info' %>
+<%= link_to({ action: 'show' }, class: 'cell has-column-centered') do %>
+  <%= svg_tag 'eye' %>
   <span><%= t('.show.title') %></span>
 <% end %>
-<%= link_to({ controller: 'wallet_advances', wallet_id: model.id }, class: 'cell') do %>
-  <span><%= t('crm.admin.wallet_advances.index.title') %></span>
+<%= link_to({ controller: 'wallet_advances', wallet_id: model.id }, class: 'cell has-column-centered') do %>
+  <span><%= t('.wallet_advances.index.title') %></span>
 <% end %>
-<%= link_to({ controller: 'wallet_payments', wallet_id: model.id }, class: 'cell') do %>
-  <span><%= t('crm.admin.wallet_payments.index.title') %></span>
+<%= link_to({ controller: 'wallet_payments', wallet_id: model.id }, class: 'cell has-column-centered') do %>
+  <span><%= t('.wallet_payments.index.title') %></span>
 <% end %>
-<%= link_to({ controller: 'wallet_logs', wallet_id: model.id }, class: 'cell') do %>
-  <span><%= t('crm.admin.wallet_logs.index.title') %></span>
+<%= link_to({ controller: 'wallet_logs', wallet_id: model.id }, class: 'cell has-column-centered') do %>
+  <span><%= t('.wallet_logs.index.title') %></span>
 <% end %>
