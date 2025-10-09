@@ -1,4 +1,4 @@
-<%= f.file_field :picture %>
+<%= render 'com/attachments/list_field', target: f.object.picture, f: f %>
 <%= f.number_field :margin_y %>
 <%= f.number_field :margin_x %>
 <%= f.select :align, options_for_select(Crm::Qrcode.options_i18n(:align), f.object.align) %>
