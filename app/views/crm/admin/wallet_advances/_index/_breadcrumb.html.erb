@@ -2,6 +2,6 @@
 <li><span class="px-3"><%= @client.name %></span></li>
 <li><%= link_to t('crm.admin.wallets.index.title'), { controller: 'wallets' } %></li>
 <% if @wallet.is_a?(Trade::CustomWallet) %>
-  <li><span class="px-3"><%= @wallet.wallet_template.name %></span>
+  <li><span class="px-3"><%= @wallet.wallet_template.name %></span></li>
 <% end %>
 <li class="is-active"><%= t('.title') %></li>
