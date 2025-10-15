@@ -6,7 +6,7 @@
 
 <%= render 'filter_bar' %>
 
-<div class="weui-menu">
+<div class="flex flex-grow-1">
   <%= render 'menu' unless @produce_plan %>
   <div
     data-controller="page"
@@ -14,7 +14,7 @@
     data-action="touchmove->page#move:passive"
     class="weui-menu-content"
   >
-    <%= render partial: 'production', collection: @productions, as: :model, locals: { item_con: 'items' } %>
+    <%= render partial: 'production_cart', layout: 'card', collection: @productions, as: :model, locals: { cart: @cart, item_con: 'items' } %>
     <% if @productions.blank? %>
       <%= render 'blank' %>
     <% elsif @productions.total_pages <= @productions.current_page %>
