@@ -1,4 +1,4 @@
-<tr id="tr_<%= model.id %>" data-depth="<%= model.depth_str %>" data-controller="tree show" data-tree-target="item" data-action="mouseenter->show#show mouseleave->show#hide">
+<tr id="tr_<%= model.id %>" data-depth="<%= model.depth_str %>" data-controller="tree show" data-tree-target="item">
   <%= yield %>
 </tr>
 <% model.children.each do |child| %>
