@@ -18,9 +18,9 @@
     <% if @productions.blank? %>
       <%= render 'blank' %>
     <% elsif @productions.total_pages <= @productions.current_page %>
-      <%= render 'no_more' %>
+      <%= render 'page_no_more' %>
     <% elsif @productions.total_pages > @productions.current_page %>
-      <%= render 'loading' %>
+      <%= render 'page_loading' %>
       <%= render 'tip' %>
     <% end %>
     <%= render 'paginator' %>
