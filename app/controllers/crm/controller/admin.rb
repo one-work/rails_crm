@@ -3,10 +3,6 @@ module Crm
     extend ActiveSupport::Concern
     include Controller::Application
 
-    included do
-      layout -> { turbo_frame_body? ? 'frame_body' : 'admin' }
-    end
-
     private
     def set_common_maintain
       if params[:client_id]
