@@ -1,7 +1,7 @@
 <%= form_with url: { action: 'new' }, class: 'button_to' do |f| %>
   <%= f.hidden_field :ids, data: { form_target: 'ids' } %>
-  <%= button_tag data: { form_target: 'submit' }, disabled: true, class: 'button is-dark' do %>
-    <i class="fa-solid fa-hand-holding-usd"></i>
+  <%= button_tag data: { form_target: 'submit' }, disabled: true, class: 'button is-rounded is-dark' do %>
+    <%= svg_tag 'hand-holding-dollar' %>
     <span class="ml-1"><%= t('.edit_assign.title') %></span>
   <% end %>
 <% end %>
