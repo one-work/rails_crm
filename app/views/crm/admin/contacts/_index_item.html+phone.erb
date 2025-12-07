@@ -1,4 +1,9 @@
-<p><%= model.name %></p>
+<p>
+  <div class="is-several">
+    <%= image_tag model.avatar, class: 'image is-32x32' if model.avatar.attached? %>
+    <span><%= model.name %></span>
+  </div>
+</p>
 <% if model.identity %>
   <p><%= model.identity %></p>
 <% else %>
