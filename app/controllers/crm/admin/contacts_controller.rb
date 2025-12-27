@@ -90,6 +90,13 @@ module Crm
       end
     end
 
+    def set_filter_columns
+      @filter_columns = set_filter_i18n(
+        'name-like': { type: 'search', default: true },
+        identity: { type: 'search', default: true }
+      )
+    end
+
     def contact_params
       _p = params.fetch(:contact, {}).permit(
         :identity,
