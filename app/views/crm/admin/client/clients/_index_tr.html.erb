@@ -1,0 +1,10 @@
+<%=
+  tr_tag(
+    model,
+    { href: url_for(controller: 'orders', client_id: model.id), icon: 'cart-shopping', title: t('.orders.index.title') },
+    { href: url_for(controller: 'addresses', client_id: model.id), icon: 'location-dot', title: t('.addresses.index.title') },
+    { href: url_for(controller: 'crm/admin/wallets', client_id: model.id), icon: 'wallet', title: t('.wallets.index.title') },
+    { href: url_for(controller: 'crm/admin/cards', client_id: model.id), icon: 'credit-card', title: t('.cards.index.title') },
+    { href: url_for(controller: 'productions', client_id: model.id), icon: 'store', title: t('.productions.index.title') }
+  ) { yield }
+%>

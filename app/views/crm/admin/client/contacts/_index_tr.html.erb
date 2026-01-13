@@ -1,0 +1,11 @@
+<%=
+  tr_tag(
+    model,
+    { action: url_for(action: 'edit_assign', id: model.id), icon: 'hand-holding-usd', title: t('.edit_assign.title'), position: 0 },
+    { href: url_for(controller: 'crm/admin/orders', contact_id: model.id), icon: 'cart-shopping', title: t('.orders.index.title') },
+    { href: url_for(controller: 'crm/admin/addresses', contact_id: model.id), icon: 'location-dot', title: t('.addresses.index.title') },
+    { href: url_for(controller: 'crm/admin/wallets', contact_id: model.id), icon: 'wallet', title: t('.wallets.index.title') },
+    { href: url_for(controller: 'crm/admin/cards', contact_id: model.id), icon: 'credit-card', title: t('.cards.index.title') },
+    { href: url_for(controller: 'crm/admin/productions', contact_id: model.id), icon: 'store', title: t('.productions.index.title') }
+  ) { yield }
+%>
