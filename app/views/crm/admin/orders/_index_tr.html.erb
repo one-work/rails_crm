@@ -1,0 +1,6 @@
+<%=
+  tr_tag(
+    model,
+    { action: url_for(action: 'payment_types', id: model.id), title: t('.payment_types.title') }
+  ) { yield }
+%>
