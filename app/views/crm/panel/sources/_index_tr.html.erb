@@ -1,6 +1,23 @@
-<tr id="tr_<%= model.id %>" data-depth="<%= model.depth_str %>" data-controller="tree show" data-tree-target="item">
-  <%= yield %>
-</tr>
+<%=
+  tr_tag(
+    model,
+    {
+      href: url_for(controller: 'qrcodes', source_id: model.id),
+      icon: 'qrcode',
+      title: t('.qrcodes.index.title')
+    },
+    {
+      href: url_for(controller: 'texts', source_id: model.id),
+      icon: 'font',
+      title: t('.texts.index.title')
+    },
+    data: {
+      controller: 'tree',
+      depth: model.depth_str,
+      tree_target: 'item'
+    },
+  ) { yield }
+%>
 <% model.children.each do |child| %>
   <%= render partial: 'index_tbody', layout: 'index_tr', locals: { model: child, display: 'table-row' } %>
 <% end %>
