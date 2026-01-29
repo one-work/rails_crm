@@ -8,6 +8,7 @@ light:
   - check
   - circle-minus
   - circle-plus
+  - clock-rotate-left
   - credit-card
   - ellipsis-vertical
   - eye
