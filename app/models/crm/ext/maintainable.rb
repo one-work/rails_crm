@@ -18,7 +18,7 @@ module Crm
       #before_save :sync_from_maintain, if: -> { client_id.present? && maintain_id_changed? }
       before_validation :sync_from_contact, if: -> { (changes.keys & ['contact_id']).present? || user_id.present? }
       before_validation :sync_from_client, if: -> { (changes.keys & ['client_id']).present? }
-      before_validation :sync_with_client_contact, if: -> { contact_id.blank? && user_id.present? }
+      before_save :sync_with_client_contact, if: -> { contact_id.blank? && user_id.present? }
 
       #after_create :change_maintain_state, if: -> { maintain_id.present? && saved_change_to_maintain_id? }
     end
