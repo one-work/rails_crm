@@ -1,7 +1,7 @@
 <td>
   <%= link_to({ action: 'show', id: model.id }, class: 'is-several') do %>
-    <%= image_tag model.product.logo, class: 'image is-24x24' if model.product.logo.attached? %>
-    <span><%= model.name %></span>
+    <%= image_tag model.logo.variant(resize_to_limit: [24, 24]), class: 'image is-24x24' if model.logo.attached? %>
+    <span><%= model.title %></span>
   <% end %>
 </td>
 <td>
