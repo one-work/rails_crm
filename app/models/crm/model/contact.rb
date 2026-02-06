@@ -118,9 +118,9 @@ module Crm
       wallets.where(user_id: nil).update_all user_id: client_user_id
       cards.where(user_id: nil).update_all user_id: client_user_id
 
-      client_user.cards.where(organ_id: organ_id, contact_id: nil).update_all contact_id: id
       client_user.orders.where(organ_id: organ_id, contact_id: nil).update_all contact_id: id
       client_user.wallets.where(organ_id: organ_id, contact_id: nil).update_all contact_id: id
+      client_user.cards.where(organ_id: organ_id, contact_id: nil).update_all contact_id: id
     end
 
     def client_options
