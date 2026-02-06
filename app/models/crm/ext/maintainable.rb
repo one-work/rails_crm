@@ -42,9 +42,7 @@ module Crm
     end
 
     def sync_with_client_contact!
-      client_contact || build_client_contact
-      self.contact = client_contact
-      self.save!
+      client_contact || create_client_contact
     end
 
     def sync_from_client
