@@ -61,7 +61,7 @@ module Crm
     end
 
     def enter_url
-      Rails.application.routes.url_for(
+      Rails.app.routes.url_for(
         controller: 'crm/contacts',
         action: 'qrcode',
         id: id
@@ -69,7 +69,7 @@ module Crm
     end
 
     def bind_path
-      Rails.application.routes.url_for(
+      Rails.app.routes.url_for(
         controller: 'crm/my/contacts',
         action: 'bind',
         id: id,
@@ -78,7 +78,7 @@ module Crm
     end
 
     def qrcode_bind_url
-      bind_url = Rails.application.routes.url_for(
+      bind_url = Rails.app.routes.url_for(
         controller: 'crm/my/contacts',
         action: 'bind',
         id: id,
