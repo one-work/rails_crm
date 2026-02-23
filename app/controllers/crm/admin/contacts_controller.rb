@@ -11,7 +11,7 @@ module Crm
     def index
       q_params = {}
       q_params.merge! default_params
-      q_params.merge! params.permit(:identity, 'name-like')
+      q_params.merge! params.permit(:identity, :client_user_id, 'name-like')
 
       @contacts = Contact.includes(:maintains, :pending_members).default_where(q_params).order(id: :desc).page(params[:page])
     end
@@ -93,7 +93,8 @@ module Crm
     def set_filter_columns
       @filter_columns = set_filter_i18n(
         'name-like': { type: 'search', default: true },
-        identity: { type: 'search', default: true }
+        identity: { type: 'search', default: true },
+        client_user_id: { type: 'search', default: true }
       )
     end
 
