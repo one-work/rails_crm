@@ -98,6 +98,7 @@ module Crm
     def sync_from_client_user
       self.name = client_user.name if self.name.blank?
       self.avatar_blob ||= client_user.avatar_blob
+      self.identity ||= client_user.oauth_users.pluck(:identity)[0]
     end
 
     def init_member_organ!
