@@ -9,7 +9,7 @@ module Crm
       q_params = {}
       q_params.merge! default_params
 
-      @custom_wallets = @client.custom_wallets.default_where(q_params).order(wallet_template_id: :desc)
+      @custom_wallets = @client.custom_wallets.default_where(q_params).order(wallet_template_id: :desc).page(params[:page])
       @wallet_templates = Trade::WalletTemplate.default_where(default_params).order(id: :asc)
       if @custom_wallets.present?
         @wallet_templates = @wallet_templates.includes(logo_attachment: :blob).where.not(id: @custom_wallets.pluck(:wallet_template_id))
