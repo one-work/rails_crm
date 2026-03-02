@@ -5,7 +5,7 @@ module Crm
 
     included do
       attribute :name, :string
-      attribute :identity, :string
+      attribute :identity, :string, index: true
       attribute :extra, :json, default: {}
       attribute :default, :boolean
       attribute :wallets_count, :integer, default: 0
