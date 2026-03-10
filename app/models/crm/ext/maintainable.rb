@@ -8,7 +8,7 @@ module Crm
       belongs_to :client, class_name: 'Crm::Client', optional: true
       accepts_nested_attributes_for :client
 
-      belongs_to :contact, class_name: 'Crm::Contact', optional: true
+      belongs_to :contact, class_name: 'Crm::Contact', counter_cache: true, optional: true
       accepts_nested_attributes_for :contact
 
       has_one :client_contact, class_name: 'Crm::Contact', primary_key: [:user_id, :organ_id], foreign_key: [:client_user_id, :organ_id]
