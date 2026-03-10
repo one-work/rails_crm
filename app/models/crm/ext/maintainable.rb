@@ -15,8 +15,7 @@ module Crm
 
       belongs_to :agent, class_name: 'Org::Member', optional: true
 
-      #before_save :sync_from_maintain, if: -> { client_id.present? && maintain_id_changed? }
-      before_validation :sync_from_contact, if: -> { (changes.keys & ['contact_id']).present? || user_id.present? }
+      before_validation :sync_from_contact, if: -> { (changes.keys & ['contact_id']).present? }
       before_validation :sync_from_client, if: -> { (changes.keys & ['client_id']).present? }
       after_save_commit :sync_with_client_contact!, if: -> { contact_id.blank? && user_id.present? } # ！联合主键的 has_one 未存储查不出来，这个是 Rails 的 bug
 
@@ -30,24 +29,21 @@ module Crm
       }.compact
     end
 
-    def sync_from_maintain
-      return unless maintain
-      self.user_id = client.user_id
-      #self.member_id = client.client_member_id
-    end
-
     def sync_from_contact
       return unless contact
-      self.assign_attributes contact.client_options
-    end
-
-    def sync_with_client_contact!
-      client_contact || create_client_contact
+      self.user_id ||= contact.client_user_id
+      self.member_id = contact.client_member_id
+      self.client_id = contact.client_id
     end
 
     def sync_from_client
       return unless client
       self.member_organ_id = client.client_organ_id
+    end
+
+    def sync_with_client_contact!
+      self.contact = client_contact || create_client_contact
+      self.save
     end
 
     def change_maintain_state
