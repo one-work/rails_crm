@@ -5,5 +5,5 @@
   <%= turbo_stream.before 'source_add', partial: 'source', locals: { model: @maintain_source } %>
   <%= turbo_stream.remove 'modal' %>
 <% else %>
-  <%= turbo_stream.apend_body partial: 'visit', locals: { url: url_for(action: 'index') } %>
+  <%= turbo_stream.append_body partial: 'visit', locals: { url: url_for(action: 'index') } %>
 <% end %>
