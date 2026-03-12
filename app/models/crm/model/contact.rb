@@ -42,10 +42,9 @@ module Crm
       validates :identity, uniqueness: { scope: [:client_id, :organ_id] }, allow_nil: true
 
       before_save :sync_from_client_user, if: -> { client_user_id_changed? && client_user }
-      after_save :sync_member_to_orders, if: -> { (saved_changes.keys & ['client_member_id']).present? }
-      after_save :sync_user_to_orders, if: -> { client_user_id && (saved_changes.keys & ['client_user_id']).present? }
+      after_save :sync_member_to_maintains, if: -> { (saved_changes.keys & ['client_member_id']).present? }
       after_update :set_default, if: -> { default? && saved_change_to_default? }
-      after_save_commit :sync_user_later, if: -> { account && saved_change_to_identity? }
+      after_save_commit :sync_contact_to_maintains_later, if: -> { client_user_id && (saved_changes.keys & ['client_user_id']).present? }
     end
 
     def set_default
@@ -107,25 +106,27 @@ module Crm
       member
     end
 
-    def sync_member_to_orders
+    def sync_member_to_maintains
       orders.update_all member_id: client_member_id, member_organ_id: client&.client_organ_id
       wallets.update_all member_id: client_member_id, member_organ_id: client&.client_organ_id
       cards.update_all member_id: client_member_id, member_organ_id: client&.client_organ_id
       carts.update_all member_id: client_member_id, member_organ_id: client&.client_organ_id
     end
 
-    def sync_user_to_orders
+    def sync_user_to_maintains
       orders.where(user_id: nil).update_all user_id: client_user_id
       wallets.where(user_id: nil).update_all user_id: client_user_id
       cards.where(user_id: nil).update_all user_id: client_user_id
+    end
 
+    def sync_contact_to_maintains
       client_user.orders.where(organ_id: organ_id, contact_id: nil).update_all contact_id: id
       client_user.wallets.where(organ_id: organ_id, contact_id: nil).update_all contact_id: id
       client_user.cards.where(organ_id: organ_id, contact_id: nil).update_all contact_id: id
     end
 
-    def sync_user_later
-      #ClientSyncUserJob.perform_later(self)
+    def sync_contact_to_maintains_later
+      SyncContactJob.perform_later(self)
     end
 
   end
