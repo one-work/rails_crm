@@ -17,7 +17,8 @@ module Crm
 
       before_validation :sync_from_contact, if: -> { (changes.keys & ['contact_id']).present? }
       before_validation :sync_from_client, if: -> { (changes.keys & ['client_id']).present? }
-      after_save_commit :sync_with_client_contact!, if: -> { contact_id.blank? && user_id.present? } # ！联合主键的 has_one 未存储查不出来，这个是 Rails 的 bug
+      before_save :sync_from_client_contact, if: -> { user_id_changed? && (contact_id.blank? && user_id.present?) }
+      after_save_commit :sync_with_create_client_contact!, if: -> { saved_change_to_user_id? && contact_id.blank? && user_id.present? } # ！联合主键的 has_one 未存储查不出来，这个是 Rails 的 bug
 
       #after_create :change_maintain_state, if: -> { maintain_id.present? && saved_change_to_maintain_id? }
     end
@@ -41,9 +42,12 @@ module Crm
       self.member_organ_id = client.client_organ_id
     end
 
-    def sync_with_client_contact!
-      self.contact = client_contact || create_client_contact
-      self.save
+    def sync_with_client_contact
+      self.contact = client_contact if client_contact.present?
+    end
+
+    def sync_with_create_client_contact!
+      create_client_contact unless client_contact
     end
 
     def change_maintain_state
