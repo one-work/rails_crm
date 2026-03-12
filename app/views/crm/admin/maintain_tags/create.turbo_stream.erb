@@ -5,5 +5,5 @@
   <%= turbo_stream.before 'tag_add', partial: 'tag', locals: { model: @maintain_tag } %>
   <%= turbo_stream.remove 'modal' %>
 <% else %>
-  <%= turbo_stream.append 'body', partial: 'visit', locals: { url: url_for(action: 'index') } %>
+  <%= turbo_stream.apend_body partial: 'visit', locals: { url: url_for(action: 'index') } %>
 <% end %>
