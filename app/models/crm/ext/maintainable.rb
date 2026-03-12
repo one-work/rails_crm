@@ -16,7 +16,7 @@ module Crm
 
       before_validation :sync_from_contact, if: -> { (changes.keys & ['contact_id']).present? }
       before_validation :sync_from_client, if: -> { (changes.keys & ['client_id']).present? }
-      before_save :sync_from_client_contact, if: -> { user_id_changed? && (contact_id.blank? && user_id.present?) }
+      before_save :sync_with_client_contact, if: -> { user_id_changed? && (contact_id.blank? && user_id.present?) }
 
       #after_create :change_maintain_state, if: -> { maintain_id.present? && saved_change_to_maintain_id? }
     end
@@ -42,11 +42,11 @@ module Crm
 
     # ！联合主键的 has_one 未存储查不出来，这个是 Rails 的 bug
     def sync_with_client_contact
-      client_contact = Contact.find_by(user_id: user_id, organ_id: organ_id)
+      client_contact = Contact.find_by(client_user_id: user_id, organ_id: organ_id)
       if client_contact.present?
         self.contact = client_contact
       else
-        Contact.create(user_id: user_id, organ_id: organ_id)
+        Contact.create(client_user_id: user_id, organ_id: organ_id)
       end
     end
 
