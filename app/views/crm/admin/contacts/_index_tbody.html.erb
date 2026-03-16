@@ -1,21 +1,26 @@
 <td>
-<% if model.name.present? %>
-  <%= link_to model.name, { action: 'show', id: model.id } %>
-<% else %>
-  <%= button_to({ action: 'edit', id: model.id }) do %>
-    <%= svg_tag 'pencil' %>
-  <% end %>
-<% end %>
+  <p>
+    <% if model.name.present? %>
+      <%= link_to model.name, { action: 'show', id: model.id } %>
+    <% else %>
+      <%= button_to({ action: 'edit', id: model.id }, class: 'size-7 text-grey') do %>
+        <%= svg_tag 'pencil' %>
+        <span>设置称呼</span>
+      <% end %>
+    <% end %>
+  </p>
+  <p>
+    <% if model.identity.present? %>
+      <%= link_to model.identity, { action: 'show', id: model.id } %>
+    <% else %>
+      <%= button_to({ action: 'edit', id: model.id }, class: 'size-7 text-grey') do %>
+        <%= svg_tag 'pencil' %>
+        <span>设置联系方式</span>
+      <% end %>
+    <% end %>
+  </p>
 </td>
-<td>
-<% if model.identity.present? %>
-  <%= link_to model.identity, { action: 'show', id: model.id } %>
-<% else %>
-  <%= button_to({ action: 'edit', id: model.id }) do %>
-    <%= svg_tag 'pencil' %>
-  <% end %>
-<% end %>
-</td>
+<td><%= model.orders_count %></td>
 <td>
   <%= link_to({ action: 'show', id: model.id }) do %>
     <p class="family-monospace"><%= model.client_user_id %></p>

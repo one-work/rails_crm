@@ -1,5 +1,8 @@
-<th><%= Crm::Contact.human_attribute_name(:name) %></th>
-<th><%= Crm::Contact.human_attribute_name(:identity) %></th>
+<th>
+  <p><%= Crm::Contact.human_attribute_name(:name) %></p>
+  <p><%= Crm::Contact.human_attribute_name(:identity) %></p>
+</th>
+<th><%= Crm::Contact.human_attribute_name(:orders_count) %></th>
 <th>
   <p class="text-grey"><%= Crm::Contact.human_attribute_name(:client_user_id) %></p>
 </th>
