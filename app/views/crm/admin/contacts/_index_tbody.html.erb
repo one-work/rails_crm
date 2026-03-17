@@ -20,7 +20,16 @@
     <% end %>
   </p>
 </td>
-<td><%= model.orders_count %></td>
+<td>
+  <%= link_to({ controller: 'orders', contact_id: model.id }, class: 'tags has-addons') do %>
+    <span class="tag"><%= Crm::Contact.human_attribute_name(:orders_count) %></span>
+    <span class="tag is-dark"><%= model.orders_count %></span>
+  <% end %>
+  <%= link_to({ controller: 'wallets', contact_id: model.id }, class: 'tags has-addons') do %>
+    <span class="tag"><%= Crm::Contact.human_attribute_name(:wallets_count) %></span>
+    <span class="tag is-dark"><%= model.wallets_count %></span>
+  <% end %>
+</td>
 <td>
   <%= link_to({ action: 'show', id: model.id }) do %>
     <p class="family-monospace"><%= model.client_user_id %></p>
