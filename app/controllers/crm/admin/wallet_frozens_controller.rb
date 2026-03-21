@@ -1,5 +1,5 @@
 module Crm
-  class Admin::WalletFrozensController < Trade::Admin::WalletAdvancesController
+  class Admin::WalletFrozensController < Trade::Admin::WalletFronzensController
     include Controller::Admin
     before_action :set_common_maintain
     before_action :set_wallet
