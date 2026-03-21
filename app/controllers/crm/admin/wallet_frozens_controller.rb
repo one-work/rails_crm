@@ -11,5 +11,9 @@ module Crm
       @wallet = @client.wallets.find params[:wallet_id]
     end
 
+    def model_klass
+      Trade::WalletFrozen
+    end
+
   end
 end
