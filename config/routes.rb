@@ -74,6 +74,7 @@ Rails.application.routes.draw do
           post :batch
         end
       end
+      resources :wallet_frozens
       resources :wallet_advances
       resources :wallet_logs
     end
