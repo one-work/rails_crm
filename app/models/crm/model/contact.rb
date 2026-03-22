@@ -47,6 +47,14 @@ module Crm
       after_save_commit :sync_contact_to_maintains, if: -> { client_user_id && (saved_changes.keys & ['client_user_id']).present? }
     end
 
+    def title
+      if name.present? && identity.present?
+        "#{name}(#{identity})"
+      else
+        name.presence || identity.presence
+      end
+    end
+
     def set_default
       self.class.where.not(id: self.id).where(organ_id: self.organ_id, client_id: self.client_id).update_all(default: false)
     end
