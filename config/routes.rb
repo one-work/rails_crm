@@ -77,6 +77,7 @@ Rails.application.routes.draw do
       end
       resources :wallet_frozens
       resources :wallet_advances
+      resources :wallet_refunds
       resources :wallet_logs
     end
     resources :card_templates
