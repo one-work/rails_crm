@@ -104,10 +104,10 @@ zh:
           title: 充值
       wallet_logs:
         index:
-          title: 使用日志
+          title: 日志
       wallet_payments:
         index:
-          title: 使用
+          title: 支付
       wechat_users:
         index:
           title: 微信用户
