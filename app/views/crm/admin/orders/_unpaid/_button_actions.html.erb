@@ -17,7 +17,7 @@
     <%= f.hidden_field :ids, data: { form_target: 'ids' } %>
     <%= button_tag data: { form_target: 'submit' }, disabled: true, class: 'button is-warning' do %>
       <%= svg_tag 'wallet' %>
-      <span class="ml-1"><%= wallet.template_name %></span>
+      <span class="ml-1"><%= wallet.wallet_template.name %></span>
       <span class="ml-1"><%= wallet.amount %></span>
     <% end %>
   <% end %>
