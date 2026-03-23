@@ -9,7 +9,7 @@ module Crm
     def index
       q_params = {}
 
-      @wallet_refunds = @wallet.wallet_refunds.default_where(q_params).page(params[:page])
+      @wallet_refunds = @wallet.wallet_refunds.default_where(q_params).order(id: :desc).page(params[:page])
     end
 
     private
