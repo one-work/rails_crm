@@ -1,7 +1,3 @@
-<li><%= link_to t('.maintains.index.title'), { controller: 'maintains' } %></li>
-<li><span class="px-3"><%= @client.name %></span></li>
-<li><%= link_to t('.wallets.index.title'), { controller: 'wallets', anchor: "tr_#{@wallet.id}" } %></li>
-<% if @wallet.wallet_template %>
-  <li><span class="px-3"><%= @wallet.wallet_template.name %></span></li>
-<% end %>
-<li class="is-active"><%= t('.title') %></li>
+<%= render 'common_breadcrumb' %>
+<li><span class="px-3"><%= @client.title %></span></li>
+<li><%= link_to t('.wallets.index.title'), { controller: 'wallets' } %></li>
