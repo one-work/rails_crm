@@ -47,6 +47,11 @@ Rails.application.routes.draw do
         post 'order/:order_id' => :order_create
         post :confirm
       end
+      member do
+        patch :analyze
+        patch :adjust
+        post :print
+      end
       resources :payment_orders do
         collection do
           post :confirmable
@@ -58,6 +63,7 @@ Rails.application.routes.draw do
         end
       end
     end
+    resources :payment_methods
     resources :scan_payments do
       collection do
         post :batch

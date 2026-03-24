@@ -20,6 +20,9 @@
     <li class="<%= active_helper(controller: 'orders', action: 'unpaid', contact_id: @client.id, active: 'is-active') %>">
       <%= link_to t('.orders.unpaid.title'), { controller: 'orders', action: 'unpaid', contact_id: @client.id } %>
     </li>
+    <li class="<%= active_helper(controllers: 'payments', active: 'is-active') %>">
+      <%= link_to t('.payments.index.title'), { controller: 'payments', contact_id: @client.id } %>
+    </li>
     <li class="<%= active_helper(controllers: 'wallets', active: 'is-active') %>">
       <%= link_to t('.wallets.index.title'), { controller: 'wallets', contact_id: @client.id } %>
     </li>
@@ -31,9 +34,6 @@
     </li>
     <li class="<%= active_helper(controllers: ['productions', 'orders'], active: 'is-active') %>">
       <%= link_to t('.productions.index.title'), { controller: 'productions', contact_id: @client.id } %>
-    </li>
-    <li class="<%= active_helper(controllers: 'provides', active: 'is-active') %>">
-      <%= link_to t('.provides.index.title'), { controller: 'provides', contact_id: @client.id } %>
     </li>
   </ul>
 </div>

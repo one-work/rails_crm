@@ -1,0 +1,10 @@
+<%=
+  tr_tag(
+    model,
+    {
+      action: url_for(action: 'print', id: model.id),
+      icon: 'print',
+      title: t('.print.title')
+    }
+  ) { yield }
+%>
