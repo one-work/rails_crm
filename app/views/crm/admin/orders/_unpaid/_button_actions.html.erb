@@ -12,7 +12,7 @@
     <span class="ml-1"><%= t('.scan_payments.batch.title') %></span>
   <% end %>
 <% end %>
-<% @client.wallets.each do |wallet| %>
+<% @client.custom_wallets.each do |wallet| %>
   <%= form_with url: { controller: 'wallet_payments', action: 'batch', wallet_id: wallet.id }, class: 'button_to' do |f| %>
     <%= f.hidden_field :ids, data: { form_target: 'ids' } %>
     <%= button_tag data: { form_target: 'submit' }, disabled: true, class: 'button is-warning' do %>
