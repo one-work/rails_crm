@@ -1,6 +1,9 @@
 <td>
-  <span><%= model.wallet_template.name %></span>
-  <span class="tag"><%= model.wallet_template.code %></span>
+  <p>
+    <span><%= model.wallet_template.name %></span>
+    <span class="tag"><%= model.wallet_template.code %></span>
+  </p>
+  <p class="size-7 text-grey"><%= model.wallet_template.description %></p>
 </td>
 <td>
   <span><%= model.amount.to_fs(:rounded, precision: model.wallet_template.digit) %></span>
