@@ -13,7 +13,7 @@
   </div>
 <% end %>
 
-<% if @scene %>
+<% if @scene&.qrcode_data_url %>
   <div class="box">
     <%= image_tag @scene.qrcode_data_url, class: 'image is-128x128' %>
   </div>
