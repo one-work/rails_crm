@@ -6,6 +6,11 @@
   <dt><%= Crm::Contact.human_attribute_name(:identity) %></dt>
   <dd><%= @contact.identity %></dd>
 </div>
+<div>
+  <dt><%= Crm::Contact.human_attribute_name(:client_user_id) %></dt>
+  <dd><%= @contact.client_user_id %></dd>
+</div>
+
 <% if defined? RailsWechat %>
   <div>
     <dt><%= Crm::Contact.human_attribute_name(:unionid) %></dt>
