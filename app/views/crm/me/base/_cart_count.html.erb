@@ -2,7 +2,7 @@
   <div class="level-left flex-direction-row">
     <%= link_to({ controller: 'carts', action: 'show', id: @cart.id }, class: 'level-item mb-0 right-badge') do %>
       <%= svg_tag 'bag-shopping', class: 'icon' %>
-      <span class="weui-badge"><%= @cart.items.count %></span>
+      <span class="tag is-badge"><%= @cart.items.count %></span>
     <% end %>
     <div class="level-item pl-4 align-items-baseline">
       <%= @cart.item_amount.to_money.format.html_safe %>
