@@ -6,6 +6,9 @@ zh:
         name: 姓名
         orders_count: 订单数
         wallets_count: 卡券数
+        client_user_id: 客户账号
+        client_id: 所属客户
+        client_member_id: 客户成员
       crm/maintain:
         state: 状态
         maintain_source_id: 客户来源
@@ -17,6 +20,7 @@ zh:
         remark: 备注
         age-gte: 年龄大于
         age-lte: 年龄小于
+        client_member_id: 客户成员
       crm/maintain/client:
         real_name: 客户
         nick_name: 客户昵称
@@ -34,6 +38,9 @@ zh:
         maintain_logs_count: 跟踪记录数
         sequence: 优先级
         logged_type: 日志类型
+        notes_count: 备注数
+      crm/note:
+        maintain_tag_id: 维护标签
       crm/tag:
         color: 标签颜色
         maintain_logs_count: 跟踪记录数
