@@ -44,7 +44,7 @@ module Crm
       before_save :sync_from_client_user, if: -> { client_user_id_changed? && client_user }
       after_save :sync_member_to_maintains, if: -> { (saved_changes.keys & ['client_member_id']).present? }
       after_update :set_default, if: -> { default? && saved_change_to_default? }
-      after_save_commit :sync_contact_to_maintains, if: -> { client_user_id && (saved_changes.keys & ['client_user_id']).present? }
+      after_save_commit :sync_contact_to_maintains, if: -> { client_user && (saved_changes.keys & ['client_user_id']).present? }
     end
 
     def title
