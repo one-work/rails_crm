@@ -45,7 +45,7 @@ module Crm
       if client_contact.present?
         self.contact = client_contact
       else
-        Contact.create(client_user_id: user_id, organ_id: organ_id)
+        self.contact = Contact.create(client_user_id: user_id, organ_id: organ_id)
       end
     end
 
