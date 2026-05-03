@@ -1,6 +1,7 @@
 light:
   - angle-left
   - angle-right
+  - barcode-read
   - buildings
   - cards-blank
   - cart-shopping

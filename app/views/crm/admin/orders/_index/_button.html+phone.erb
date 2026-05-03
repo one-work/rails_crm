@@ -1,8 +1,8 @@
 <%= link_to({ action: 'new' }, class: 'button is-medium') do %>
-  <i class="fa-solid fa-truck-fast"></i>
-  <span class="ml-1"><%= t('.orders.new.title') %></span>
+  <%= svg_tag 'truck-fast' %>
+  <span><%= t('.orders.new.title') %></span>
 <% end %>
-<%= link_to({ action: 'new_simple' }, class: 'button is-medium') do %>
-  <i class="fa-solid fa-truck-fast text-success"></i>
-  <span class="ml-1"><%= t('.orders.new_simple.title') %></span>
+<%= link_to({ action: 'new_simple' }, class: 'button is-medium is-success') do %>
+  <%= svg_tag 'truck-fast' %>
+  <span><%= t('.orders.new_simple.title') %></span>
 <% end %>

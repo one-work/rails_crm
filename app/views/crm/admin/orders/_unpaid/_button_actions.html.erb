@@ -1,27 +1,27 @@
 <%= form_with url: { controller: 'hand_payments', action: 'batch' }, class: 'button_to' do |f| %>
   <%= button_tag disabled: true, class: 'button is-success' do %>
-    <i class="fa-solid fa-cash-register"></i>
-    <span class="ml-1"><%= t('.hand_payments.batch.title') %></span>
+    <%= svg_tag 'cash-register' %>
+    <span><%= t('.hand_payments.batch.title') %></span>
   <% end %>
 <% end %>
 <%= form_with url: { controller: 'scan_payments', action: 'batch' }, class: 'button_to' do |f| %>
   <%= button_tag disabled: true, class: 'button is-warning' do %>
-    <i class="fa-brands fa-weixin"></i>
-    <span class="ml-1"><%= t('.scan_payments.batch.title') %></span>
+    <%= svg_tag 'barcode-read' %>
+    <span><%= t('.scan_payments.batch.title') %></span>
   <% end %>
 <% end %>
 <% @client.custom_wallets.each do |wallet| %>
   <%= form_with url: { controller: 'wallet_payments', action: 'batch', wallet_id: wallet.id }, class: 'button_to' do |f| %>
     <%= button_tag disabled: true, class: 'button is-warning' do %>
       <%= svg_tag 'wallet' %>
-      <span class="ml-1"><%= wallet.wallet_template.name %></span>
-      <span class="ml-1"><%= wallet.amount %></span>
+      <span><%= wallet.wallet_template.name %></span>
+      <span><%= wallet.amount %></span>
     <% end %>
   <% end %>
 <% end %>
 <%= form_with url: { action: 'batch_destroy' }, method: :delete, class: 'button_to' do %>
   <%= button_tag disabled: true, class: 'button is-danger' do %>
-    <i class="fa-solid fa-trash-can"></i>
-    <span class="ml-1"><%= t('.batch_destroy.title') %></span>
+    <%= svg_tag 'trash-can' %>
+    <span><%= t('.batch_destroy.title') %></span>
   <% end %>
 <% end %>
