@@ -1,9 +1,9 @@
 <% if referer_controller == 'crm/admin/maintain_tags' %>
   <%= turbo_stream.append 'tbody', partial: 'index_tbody', layout: 'index_tr', locals: { model: @maintain_tag } %>
-  <%= turbo_stream.remove 'modal' %>
+  <%= turbo_stream.remove 'modal_form' %>
 <% elsif referer_controller == 'crm/admin/maintains' %>
   <%= turbo_stream.before 'tag_add', partial: 'tag', locals: { model: @maintain_tag } %>
-  <%= turbo_stream.remove 'modal' %>
+  <%= turbo_stream.remove 'modal_form' %>
 <% else %>
   <%= turbo_stream.append_body partial: 'visit', locals: { url: url_for(action: 'index') } %>
 <% end %>
