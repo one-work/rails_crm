@@ -1,6 +1,4 @@
-<%= link_to({ action: 'show', id: model.id }) do %>
-  <span class="text-link-dark"><%= model.name %></span>
-<% end %>
+<span class="text-link-dark"><%= model.name %></span>
 <div class="has-block-space-between py-1">
   <div class="has-inline-centered">
     <span class="text-danger"><%= model.price.to_money.format.html_safe %></span>
