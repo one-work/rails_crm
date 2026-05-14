@@ -1,0 +1,26 @@
+<%= render partial: 'order', locals: { model: @order } %>
+
+<%= render partial: 'address', locals: { model: @order.address } if @order.address %>
+<%= render partial: 'from_address', locals: { model: @order.from_address } if @order.from_address %>
+
+<% if @order.packages.present? %>
+  <%= render partial: 'packages', locals: { model: @order } %>
+<% elsif @order.address %>
+  <%= render partial: 'package_buttons', locals: { model: @order } %>
+<% end %>
+
+<%= render partial: 'items', locals: { model: @order } %>
+
+<% if @order.cart_promotes.present? %>
+<div class="mx-3">
+  <strong class="text-grey pl-3">服务/促销</strong>
+  <%= render partial: 'cart_promote', collection: @order.cart_promotes, as: :cart_promote %>
+</div>
+<% end %>
+
+<% if @order.payment_orders.present? %>
+<div>
+  <strong class="text-grey pl-3">支付</strong>
+  <%= render partial: 'payment_order', collection: @order.payment_orders, as: :model %>
+</div>
+<% end %>
