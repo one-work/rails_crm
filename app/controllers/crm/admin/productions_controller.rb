@@ -14,22 +14,6 @@ module Crm
     end
 
     private
-    def set_cart
-      if params[:client_member_id]
-        options = { member_id: @client.id }
-      elsif params[:client_id]
-        options = { client_id: @client.id, contact_id: nil }
-      elsif params[:contact_id]
-        options = { client_id: @client.client_id, contact_id: @client.id }
-      elsif params[:maintain_id]
-        options = { client_id: @client.client_id, contact_id: @client.contact_id, agent_id: @client.member_id }
-      else
-        options = {}
-      end
-
-      @cart = Trade::Cart.get_cart(params, agent_id: current_member.id, **default_params, **options)
-    end
-
     def _prefixes
       super do |pres|
         if ['show'].include?(params[:action])
