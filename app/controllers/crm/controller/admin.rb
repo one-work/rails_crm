@@ -19,17 +19,15 @@ module Crm
       end
     end
 
-    def set_cart
+    def set_cart_with(**options)
       if params[:client_member_id]
-        options = { member_id: @client.id }
+        options.merge! member_id: @client.id
       elsif params[:client_id]
-        options = { client_id: @client.id, contact_id: nil }
+        options.merge! client_id: @client.id, contact_id: nil
       elsif params[:contact_id]
-        options = { client_id: @client.client_id, contact_id: @client.id }
+        options.merge! client_id: @client.client_id, contact_id: @client.id
       elsif params[:maintain_id]
-        options = { client_id: @client.client_id, contact_id: @client.contact_id, agent_id: @client.member_id }
-      else
-        options = {}
+        options.merge! client_id: @client.client_id, contact_id: @client.contact_id, agent_id: @client.member_id
       end
 
       @cart = Trade::Cart.get_cart(params, agent_id: current_member.id, **default_params, **options)

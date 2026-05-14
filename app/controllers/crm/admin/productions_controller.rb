@@ -14,14 +14,8 @@ module Crm
     end
 
     private
-    def _prefixes
-      super do |pres|
-        if ['show'].include?(params[:action])
-          pres + ['trade/my/wallet_templates', 'trade/my/base']
-        else
-          pres
-        end
-      end
+    def set_cart
+      set_cart_with
     end
 
   end
