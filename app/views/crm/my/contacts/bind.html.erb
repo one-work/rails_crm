@@ -15,9 +15,11 @@
 
 <div class="box">
   <p class="text-centered">如果这不是你的信息</p>
-  <%= button_to({ action: 'destroy_bind', id: @contact.id }, method: :delete, class: 'button is-fullwidth is-danger mx-auto') do %>
+  <div class="has-block-centered">
+  <%= button_to({ action: 'destroy_bind', id: @contact.id }, method: :delete, class: 'button is-fullwidth is-danger') do %>
     <span>解除绑定</span>
   <% end %>
+  </div>
 </div>
 
 <%= link_to(current_organ.redirect_path, class: 'button is-success mx-3') do %>
