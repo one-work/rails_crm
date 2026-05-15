@@ -1,0 +1,19 @@
+<span class="text-link-dark"><%= model.name %></span>
+<div class="has-block-space-between py-1">
+  <div class="has-inline-centered">
+    <span class="text-danger"><%= model.price.to_money.format.html_safe %></span>
+    <% if model.unit.present? %>
+      <span class="text-grey">/</span>
+      <span class="text-grey-dark"><%= model.unit %></span>
+    <% end %>
+    <% if model.advance_price.to_d > 0 %>
+      <span class="text-grey ml-2">预付</span>
+      <span class="text-danger-dark"><%= model.advance_price.to_money.format.html_safe %></span>
+    <% end %>
+  </div>
+  <div class="flex">
+  <% if @cart %>
+    <%= render partial: 'cart_item', locals: { item: @cart.init_cart_item(params, good_id: model.id), cart: @cart, item_con: 'items' } %>
+  <% end %>
+  </div>
+</div>
