@@ -181,3 +181,7 @@ zh:
           title: 微信用户
         online:
           title: 在线用户
+    my:
+      contacts:
+        bind:
+          title: 身份绑定
