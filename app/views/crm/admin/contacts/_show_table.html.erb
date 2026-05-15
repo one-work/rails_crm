@@ -18,9 +18,16 @@
   </div>
 <% end %>
 
-<% if @scene&.qrcode_data_url %>
-  <div class="box">
-    <%= image_tag @scene.qrcode_data_url, class: 'image is-128x128' %>
+<% if @scene&.qrcode_data_url && false %>
+  <div>
+    <dt></dt>
+    <dd><%= image_tag @scene.qrcode_data_url, class: 'image is-128x128' %></dd>
   </div>
 <% end %>
 
+<% unless @contact.client_user %>
+<div>
+  <dt>绑定二维码</dt>
+  <dd><%= image_tag @contact.qrcode_bind_url, class: 'image is-128x128' %></dd>
+</div>
+<% end %>
