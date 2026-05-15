@@ -1,0 +1,13 @@
+<%= form_with url: { action: 'cart_create' }, id: 'new_order', class: 'mt-3' do |f| %>
+<% end %>
+
+<div class="box is-padding-less">
+  <% if @cart.aim_rent? %>
+    <%= render partial: 'rent_item', collection: @cart.checked_all_items, as: :item %>
+  <% else %>
+    <%= render partial: 'item', collection: @cart.checked_all_items, as: :item %>
+  <% end %>
+  <%= render partial: 'item', collection: @cart.trial_card_items, as: :item %>
+</div>
+
+<%= submit_tag t('.create.title'), class: 'button is-fullwidth is-success', form: 'new_order' %>
