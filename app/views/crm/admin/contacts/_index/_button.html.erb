@@ -1,10 +1,6 @@
-<%= button_to({ action: 'new' }, class: 'button is-rounded is-info') do %>
+<%= button_to({ action: 'new' }, class: 'button is-rounded is-primary') do %>
   <%= svg_tag 'plus' %>
   <span><%= t('.new.title') %></span>
-<% end %>
-<%= button_to({ action: 'new_detect' }, class: 'button is-rounded is-primary') do %>
-  <%= svg_tag 'plus' %>
-  <span><%= t('.new_detect.title') %></span>
 <% end %>
 <%= button_to({ controller: 'datum/admin/table_lists', action: 'new_import', data_list_id: 'Crm::ContactImport' }, class: 'button is-rounded is-light') do %>
   <%= svg_tag 'file-excel' %>
