@@ -1,11 +1,12 @@
-<p>
+<% if model.name %>
   <div class="is-several">
     <%= image_tag model.avatar, class: 'image is-32x32' if model.avatar.attached? %>
     <span><%= model.name %></span>
   </div>
-</p>
+<% end %>
 <% if model.identity %>
   <p><%= model.identity %></p>
-<% else %>
-  <p class="text-grey"><time data-controller="time" data-format="human"><%= model.created_at.to_fs(:iso8601) %></time></p>
 <% end %>
+<p class="size-7 text-grey">
+  <time data-controller="time" data-format="human"><%= model.created_at.to_fs(:iso8601) %></time>
+</p>
