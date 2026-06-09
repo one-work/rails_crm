@@ -1,11 +1,11 @@
-<div class="box is-padding-less">
-  <div class="box-header">
-    <div>
+<div class="card as-transparent">
+  <div class="card-header">
+    <div class="size-7">
       <%= svg_tag 'chart-line' %>
-      <span><%= t('crm.panel.title') %></span>
+      <span class="text-grey"><%= t('crm.panel.title') %></span>
     </div>
   </div>
-  <div class="fixed-grid has-3-cols is-shadow p-3">
+  <div class="card-content fixed-grid has-3-cols">
     <div class="grid">
       <%= link_to({ controller: 'crm/panel/sources' }, class: 'cell has-column-centered') do %>
         <%= svg_tag 'users', class: 'icon is-medium' %>
