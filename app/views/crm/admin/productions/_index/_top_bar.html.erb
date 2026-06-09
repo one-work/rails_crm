@@ -1,0 +1,5 @@
+<% if params[:station_id].present? %>
+  <%= render 'top_bar_station' %>
+<% elsif params[:desk_id].present? %>
+  <%= render 'top_bar_desk' %>
+<% end %>
