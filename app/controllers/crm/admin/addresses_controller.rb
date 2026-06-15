@@ -1,5 +1,5 @@
 module Crm
-  class Admin::AddressesController < Ship::Admin::AddressesController
+  class Admin::AddressesController < defined?(RailsShip) ? Ship::Admin::AddressesController : Admin::BaseController
     include Controller::Admin
     before_action :set_common_maintain
     before_action :set_address, only: [:show, :edit, :update, :destroy, :actions]
