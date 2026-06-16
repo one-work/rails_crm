@@ -1,4 +1,4 @@
-<% if role_permit?(business: 'crm', namespace: 'me') %>
+<% if any_role?(business: 'crm', namespace: 'me') %>
 <div class="menu ex-accordion is-active">
   <%= link_to({ controller: 'crm/me/home' }, class: 'menu-label') do %>
     <div>
