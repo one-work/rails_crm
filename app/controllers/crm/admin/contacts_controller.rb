@@ -90,12 +90,12 @@ module Crm
       end
     end
 
-    def set_filter_columns
-      @filter_columns = set_filter_i18n(
+    def filter_columns
+      {
         'name-like': { type: 'search', default: true },
         identity: { type: 'search', default: true },
         client_user_id: { type: 'search', default: true }
-      )
+      }
     end
 
     def contact_params
