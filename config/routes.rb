@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Rails.app.routes.draw do
   concern :maintainable do
     resources :notes
     resources :orders do
