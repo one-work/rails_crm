@@ -11,7 +11,7 @@
   </p>
   <p>
     <% if model.identity.present? %>
-      <%= link_to model.identity, { action: 'show', id: model.id } %>
+      <%= link_to model.identity, { action: 'show', id: model.id }, class: 'family-monospace' %>
     <% else %>
       <%= button_to({ action: 'edit', id: model.id }, class: 'size-7 text-grey') do %>
         <%= svg_tag 'pencil' %>
