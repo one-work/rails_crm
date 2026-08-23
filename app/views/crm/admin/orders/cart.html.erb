@@ -11,5 +11,5 @@
 <% end %>
 
 <%= render layout: 'index_table_without_actions' do %>
-  <%= render partial: 'index_tbody', layout: 'index_tr_without_actions', collection: @cart.checked_all_items, as: :model %>
+  <%= render partial: 'index_tbody', layout: 'index_tr', collection: @cart.checked_all_items, as: :model %>
 <% end %>
