@@ -1,13 +1,7 @@
 <div class="as-bar">
-  <% if current_state %>
-    <%= link_to(current_state.prev_path, class: 'px-4') do %>
-      <%= svg_tag 'angle-left', kind: 'regular' %>
-    <% end %>
-  <% else %>
-    <%= link_to({ controller: 'contacts', action: 'show', id: @client.id }, class: 'px-4') do %>
-      <%= svg_tag 'angle-left', kind: 'regular' %>
-    <% end %>
-  <% end %>
+  <button data-controller="back" class="px-5">
+    <%= svg_tag 'angle-left', kind: 'regular', class: 'icon is-small text-link' %>
+  </button>
   <div class="bar-title">
     <span><%= @client.name %></span>
     <span class="px-2"></span>
