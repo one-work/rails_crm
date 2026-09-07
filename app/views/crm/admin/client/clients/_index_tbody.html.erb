@@ -16,7 +16,7 @@
 <% if defined? RailsFactory %>
   <td>
     <%= form_with theme: 'switch', model: model, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
-      <%= f.check_box :vendor, data: { action: 'input#submit' }, id: nil %>
+      <%= f.checkbox :vendor, data: { action: 'input#submit' }, id: nil %>
     <% end %>
   </td>
 <% end %>
