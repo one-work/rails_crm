@@ -1,6 +1,6 @@
 <td>
   <%= link_to({ action: 'show', id: model.id }, class: 'is-several') do %>
-    <%= image_tag model.product.logo, class: 'image is-24x24' if model.product.logo.attached? %>
+    <%= image_tag model.logo, class: 'image is-24x24' if model.logo.attached? %>
     <span><%= model.name %></span>
   <% end %>
 </td>
