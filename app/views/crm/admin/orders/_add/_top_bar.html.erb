@@ -1,10 +1,10 @@
 <div class="as-bar">
   <% if @order.items[0].good_type == 'Trade::Advance' %>
-    <%= link_to({ controller: 'wallet_templates', action: 'show', id: @order.items[0].good.wallet_template_id }, class: 'px-4') do %>
+    <%= link_to({ controller: 'wallet_templates', action: 'show', id: @order.items[0].good.wallet_template_id }, class: 'left') do %>
       <%= svg_tag 'angle-left', kind: 'regular' %>
     <% end %>
   <% elsif @order.items[0].good_type == 'Trade::Purchase' %>
-    <%= link_to({ controller: 'card_templates', action: 'show', id: @order.items[0].good.card_template_id }, class: 'px-4') do %>
+    <%= link_to({ controller: 'card_templates', action: 'show', id: @order.items[0].good.card_template_id }, class: 'left') do %>
       <%= svg_tag 'angle-left', kind: 'regular' %>
     <% end %>
   <% end %>
@@ -12,5 +12,5 @@
     <span><%= @maintain.remark %></span>
     <span class="ml-1"><%= t('.title') %></span>
   </div>
-  <i class="px-5"></i>
+  <i class="right"></i>
 </div>
