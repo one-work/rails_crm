@@ -25,7 +25,12 @@ module Crm
     end
 
     def cart_update
-      @contact_cart = Trade::Cart.get_cart(params, agent_id: current_member.id, contact_id: @client.id, **default_params)
+      @contact_cart = Trade::Cart.get_cart(
+        params,
+        agent_id: current_member.id,
+        contact_id: @client.id,
+        **default_params
+      )
       @cart.change_contact_to_items(@client, @contact_cart)
     end
 
