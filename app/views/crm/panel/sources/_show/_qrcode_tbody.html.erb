@@ -1,5 +1,5 @@
 <td>
-  <%= image_tag model.picture, class: 'image is-32x32' if model.picture.attached? %>
+  <%= image_tag model.picture.variant(resize_to_limit: [32, 32]), class: 'image is-radius is-32x32' if model.picture.attached? %>
 </td>
 <th><%= model.align_i18n %></th>
 <td>
