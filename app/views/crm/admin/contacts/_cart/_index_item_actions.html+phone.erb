@@ -8,7 +8,7 @@
     </div>
   </div>
 <% else %>
-  <%= button_to({ action: 'cart_update', id: model.id }, class: 'media is-fullwidth', form: { class: 'is-fullwidth p-3' }) do %>
+  <%= button_to({ action: 'cart_update', id: model.id }, class: 'media is-fullwidth', data: { turbo_action: 'replace' }, form: { class: 'is-fullwidth p-3' }) do %>
     <div class="media-content">
       <%= yield %>
     </div>
