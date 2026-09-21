@@ -84,22 +84,17 @@ module Crm
       )
     end
 
-    def qrcode_bind_url
-      bind_url = Rails.app.routes.url_for(
+    def bind_url
+      Rails.app.routes.url_for(
         controller: 'crm/my/contacts',
         action: 'bind',
         id: id,
         host: organ.host
       )
-      QrcodeUtil.data_url(bind_url)
     end
 
     def qrcode_enter_png
       QrcodeUtil.code_png(enter_url, border_modules: 0, fill: 'pink')
-    end
-
-    def qrcode_enter_url
-      QrcodeUtil.data_url(enter_url)
     end
 
     def sync_from_client_user

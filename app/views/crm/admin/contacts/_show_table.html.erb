@@ -6,28 +6,14 @@
   <dt><%= Crm::Contact.human_attribute_name(:identity) %></dt>
   <dd><%= @contact.identity %></dd>
 </div>
-<div>
-  <dt><%= Crm::Contact.human_attribute_name(:client_user_id) %></dt>
-  <dd><%= @contact.client_user_id %></dd>
-</div>
-
-<% if defined? RailsWechat %>
+<% if @contact.client_user %>
   <div>
-    <dt><%= Crm::Contact.human_attribute_name(:unionid) %></dt>
-    <dd><%= @contact.unionid %></dd>
+    <dt><%= Crm::Contact.human_attribute_name(:client_user_id) %></dt>
+    <dd><%= @contact.client_user_id %></dd>
   </div>
-<% end %>
-
-<% if @scene&.qrcode_data_url && false %>
+<% else %>
   <div>
-    <dt></dt>
-    <dd><%= image_tag @scene.qrcode_data_url, class: 'image is-128x128' %></dd>
+    <dt>绑定二维码</dt>
+    <dd><%= image_tag QrcodeUtil.data_url(@contact.bind_url), class: 'image is-128x128' %></dd>
   </div>
-<% end %>
-
-<% unless @contact.client_user %>
-<div>
-  <dt>绑定二维码</dt>
-  <dd><%= image_tag @contact.qrcode_bind_url, class: 'image is-128x128' %></dd>
-</div>
 <% end %>
