@@ -1,0 +1,15 @@
+<% if model.id.to_s == params[:client_id] %>
+  <div class="cell has-column-centered button is-primary">
+    <p class="is-wrap"><%= model.name %></p>
+  </div>
+<% else %>
+  <%=
+    link_to(
+      { controller: 'factory/agent/productions', client_id: model.id },
+      data: { turbo_action: 'replace' },
+      class: 'cell button is-outlined is-primary has-column-centered'
+    ) do
+  %>
+    <p class="is-wrap"><%= model.name %></p>
+  <% end %>
+<% end %>
