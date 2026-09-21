@@ -1,1 +1,24 @@
-<%= render 'show_table' %>
+<dl class="as-show as-boxed">
+  <%= render 'show_table' %>
+</dl>
+
+<div class="fixed-grid has-auto-count">
+  <div class="grid">
+    <%= link_to({ controller: 'client/contacts', client_id: model.id }, class: 'cell as-boxed has-column-centered p-4') do %>
+      <strong><%= @client.contacts.count %></strong>
+      <p><%= t('crm.admin.client.contacts.index.title') %></p>
+    <% end %>
+    <%= link_to({ controller: 'orders', client_id: model.id }, class: 'cell as-boxed has-column-centered p-4') do %>
+      <strong><%= @client.orders.count %></strong>
+      <p><%= t('.orders.index.title') %></p>
+    <% end %>
+    <%= link_to({ controller: 'addresses', client_id: model.id }, class: 'cell as-boxed has-column-centered p-4') do %>
+      <strong><%= @client.addresses.count %></strong>
+      <p><%= t('.addresses.index.title') %></p>
+    <% end %>
+    <%= link_to({ controller: 'productions', client_id: model.id }, class: 'cell as-boxed has-column-centered p-4') do %>
+      <%= svg_tag 'store' %>
+      <span><%= t('.productions.index.title') %></span>
+    <% end %>
+  </div>
+</div>
