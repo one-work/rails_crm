@@ -2,4 +2,6 @@
   <%= render 'top_bar_station' %>
 <% elsif params[:desk_id].present? %>
   <%= render 'top_bar_desk' %>
+<% else %>
+  <%= render 'top_bar_normal' %>
 <% end %>
