@@ -5,15 +5,15 @@ module Crm
 
     private
     def set_common_maintain
-      if params[:client_id]
+      if params[:client_id].present?
         @client = Client.default_where(default_ancestors_params).find params[:client_id]
-      elsif params[:contact_id]
+      elsif params[:contact_id].present?
         @client = Contact.default_where(default_ancestors_params).find params[:contact_id]
-      elsif params[:client_member_id]
+      elsif params[:client_member_id].present?
         @client = Org::Member.where.associated(:client_maintains).where(client_maintains: { organ_id: current_organ.id }).find params[:client_member_id]
-      elsif params[:client_organ_id]
+      elsif params[:client_organ_id].present?
         @client = Org::Organ.where.associated(:client_maintains).where(client_maintains: { organ_id: current_organ.id }).find params[:client_organ_id]
-      elsif params[:maintain_id]
+      elsif params[:maintain_id].present?
         @client = Maintain.default_where(default_ancestors_params).find params[:maintain_id]
       else
       end
