@@ -14,8 +14,9 @@ module Crm
       belongs_to :agent, class_name: 'Org::Member', optional: true
 
       after_initialize :sync_from_contact, if: -> { new_record? && contact.present? }
-      before_validation :sync_from_contact, if: -> { (changes.keys & ['contact_id']).present? }
-      before_validation :sync_from_client, if: -> { (changes.keys & ['client_id']).present? }
+      after_initialize :sync_from_client, if: -> { new_record? && client.present? }
+      before_validation :sync_from_contact, if: -> { persisted? && (changes.keys & ['contact_id']).present? }
+      before_validation :sync_from_client, if: -> { persisted? && (changes.keys & ['client_id']).present? }
       before_save :sync_with_client_contact, if: -> { user_id_changed? && (contact_id.blank? && user_id.present?) }
 
       #after_create :change_maintain_state, if: -> { maintain_id.present? && saved_change_to_maintain_id? }
