@@ -13,6 +13,7 @@ module Crm
 
       belongs_to :agent, class_name: 'Org::Member', optional: true
 
+      after_initialize :sync_from_contact, if: -> { new_record? && contact.present? }
       before_validation :sync_from_contact, if: -> { (changes.keys & ['contact_id']).present? }
       before_validation :sync_from_client, if: -> { (changes.keys & ['client_id']).present? }
       before_save :sync_with_client_contact, if: -> { user_id_changed? && (contact_id.blank? && user_id.present?) }
