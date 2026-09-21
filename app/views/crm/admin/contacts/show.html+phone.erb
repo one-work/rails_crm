@@ -16,5 +16,9 @@
       <strong><%= @contact.pending_members.count %></strong>
       <p>Contacts Count</p>
     </div>
+    <%= link_to({ controller: 'productions', contact_id: model.id }, class: 'cell as-boxed has-column-centered p-4') do %>
+      <%= svg_tag 'store' %>
+      <span><%= t('.productions.index.title') %></span>
+    <% end %>
   </div>
 </div>
