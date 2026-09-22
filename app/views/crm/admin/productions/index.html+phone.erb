@@ -4,8 +4,9 @@
   <%= render 'menu' unless @produce_plan %>
   <div
     data-controller="page"
-    data-page-url-value="<%= url_for(action: 'index', **params.permit(:taxon_id, :desk_id, :dispatch, :client_id, :contact_id)) %>"
+    data-page-url-value="<%= url_for(action: 'index', **params.permit(:taxon_id, :desk_id, :dispatch, :contact_id)) %>"
     class="has-page-grow ml-3 overflow-x-hidden"
+    style="scrollbar-width: none"
   >
     <%=
       render(
@@ -17,12 +18,11 @@
       )
     %>
     <% if @productions.blank? %>
-      <%= render 'blank' %>
+      <%= render 'page_blank' %>
     <% elsif @productions.total_pages <= @productions.current_page %>
       <%= render 'page_no_more' %>
     <% elsif @productions.total_pages > @productions.current_page %>
       <%= render partial: 'page_loading', locals: { all: @productions } %>
-      <%= render 'tip' %>
     <% end %>
     <%= render 'paginator' %>
   </div>
