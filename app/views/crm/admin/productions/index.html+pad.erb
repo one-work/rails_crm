@@ -3,7 +3,15 @@
 <div class="columns is-gapless">
   <div class="column">
     <div class="cards is-4">
-      <%= render partial: 'production_cart', layout: 'card', collection: @productions, as: :model, locals: { cart: @cart, item_con: 'crm/admin/items' } %>
+      <%=
+        render(
+          partial: 'production_cart',
+          layout: 'card',
+          collection: @productions,
+          as: :model,
+          locals: { cart: @cart, item_con: 'crm/admin/items', prod_con: controller_path }
+        )
+      %>
     </div>
   </div>
   <div class="column is-one-quarter">

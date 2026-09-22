@@ -136,6 +136,7 @@ Rails.app.routes.draw do
       resources :productions, controller: 'client/productions' do
         member do
           patch :create_dialog
+          patch :dialog
         end
       end
       resources :orders, controller: 'client/orders' do
