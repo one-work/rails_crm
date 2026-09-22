@@ -1,20 +1,27 @@
 <%= render 'filter_bar' %>
 
-<div class="flex flex-grow-1">
+<div class="flex mb-0 flex-grow-1">
   <%= render 'menu' unless @produce_plan %>
   <div
     data-controller="page"
-    data-page-debug-value="true"
-    data-action="touchmove->page#move:passive"
-    class="weui-menu-content"
+    data-page-url-value="<%= url_for(action: 'index', **params.permit(:taxon_id, :desk_id, :dispatch, :client_id, :contact_id)) %>"
+    class="has-page-grow ml-3 overflow-x-hidden"
   >
-    <%= render partial: 'production_cart', layout: 'card', collection: @productions, as: :model, locals: { cart: @cart, item_con: 'items' } %>
+    <%=
+      render(
+        partial: 'production_cart',
+        layout: 'card',
+        collection: @productions,
+        as: :model,
+        locals: { cart: @cart, item_con: 'items' }
+      )
+    %>
     <% if @productions.blank? %>
       <%= render 'blank' %>
     <% elsif @productions.total_pages <= @productions.current_page %>
       <%= render 'page_no_more' %>
     <% elsif @productions.total_pages > @productions.current_page %>
-      <%= render 'page_loading' %>
+      <%= render 'page_loading', locals: { all: @productions } %>
       <%= render 'tip' %>
     <% end %>
     <%= render 'paginator' %>
