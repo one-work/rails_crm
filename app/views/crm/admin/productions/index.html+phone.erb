@@ -21,7 +21,7 @@
     <% elsif @productions.total_pages <= @productions.current_page %>
       <%= render 'page_no_more' %>
     <% elsif @productions.total_pages > @productions.current_page %>
-      <%= render 'page_loading', locals: { all: @productions } %>
+      <%= render partial: 'page_loading', locals: { all: @productions } %>
       <%= render 'tip' %>
     <% end %>
     <%= render 'paginator' %>
