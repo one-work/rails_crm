@@ -131,7 +131,11 @@ Rails.app.routes.draw do
     end
     resources :clients do
       collection do
+        get 'cart/:cart_id' => :cart
         post :search
+      end
+      member do
+        post 'cart/:cart_id' => :cart_update
       end
       resources :productions, controller: 'client/productions' do
         member do
