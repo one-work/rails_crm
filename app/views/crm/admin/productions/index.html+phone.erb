@@ -14,7 +14,11 @@
         layout: 'card',
         collection: @productions,
         as: :model,
-        locals: { cart: @cart, item_con: 'items', prod_con: controller_path }
+        locals: {
+          cart: @cart,
+          item_con: 'items',
+          extra_options: { controller: controller_path }
+        }
       )
     %>
     <% if @productions.blank? %>
