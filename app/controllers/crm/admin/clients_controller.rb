@@ -2,7 +2,7 @@ module Crm
   class Admin::ClientsController < Admin::BaseController
     before_action :set_client, only: [
       :show, :edit, :update, :destroy, :actions,
-      :edit_assign, :update_assign, :edit_organ, :init_organ
+      :cart_update, :edit_assign, :update_assign, :edit_organ, :init_organ
     ]
     before_action :set_new_client, only: [:new, :create]
 
@@ -12,6 +12,24 @@ module Crm
       q_params.merge! params.permit('name-asc')
 
       @clients = Client.includes(:maintains).roots.default_where(q_params).page(params[:page]).per(params[:per])
+    end
+
+    def cart
+      q_params = {}
+      q_params.merge! default_params
+      q_params.merge! params.permit(:identity, 'name-like')
+
+      @clients = Client.default_where(q_params).order(id: :desc).page(params[:page])
+    end
+
+    def cart_update
+      @client_cart = Trade::Cart.get_cart(
+        params,
+        agent_id: current_member.id,
+        client_id: @client.id,
+        **default_params
+      )
+      @cart.change_contact_to_items(@client, @client_cart)
     end
 
     def search
