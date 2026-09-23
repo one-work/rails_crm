@@ -141,6 +141,7 @@ Rails.app.routes.draw do
       end
       resources :orders, controller: 'client/orders' do
         collection do
+          get :new_simple
           post :batch_paid
           delete :batch_destroy
         end
