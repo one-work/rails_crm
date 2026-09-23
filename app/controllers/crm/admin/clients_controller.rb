@@ -14,6 +14,14 @@ module Crm
       @clients = Client.includes(:maintains).roots.default_where(q_params).page(params[:page]).per(params[:per])
     end
 
+    def all
+      q_params = {}
+      q_params.merge! default_params
+      q_params.merge! params.permit('name-asc')
+
+      @clients = Client.includes(:maintains).roots.default_where(q_params).page(params[:page]).per(params[:per])
+    end
+
     def cart
       q_params = {}
       q_params.merge! default_params

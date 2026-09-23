@@ -131,6 +131,7 @@ Rails.app.routes.draw do
     end
     resources :clients do
       collection do
+        get :all
         get 'cart/:cart_id' => :cart
         post :search
       end

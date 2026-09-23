@@ -1,0 +1,23 @@
+<div id="tr_<%= model.id %>" class="card as-narrow">
+  <div class="card-content">
+    <%= yield %>
+  </div>
+  <div class="card-footer">
+    <%=
+      link_to(
+        { controller: 'crm/admin/client/orders', client_id: model.id },
+        class: 'card-footer-item'
+      ) do
+    %>
+      <strong id="ordered_count_<%= model.id %>"><%= model.orders_count %></strong>
+      <span>订单</span>
+    <% end %>
+    <%= link_to({ controller: 'factory/agent/productions', client_id: model.id }, class: 'card-footer-item') do %>
+      <span>下单</span>
+    <% end %>
+    <%= button_to({ action: 'actions', id: model.id }, form: { class: 'card-footer-item' }) do %>
+      <%= svg_tag 'ellipsis-vertical' %>
+      <span><%= t('.actions.title') %></span>
+    <% end %>
+  </div>
+</div>
