@@ -1,0 +1,17 @@
+<%= turbo_stream.append 'tbody' do %>
+  <%=
+    render(
+      partial: 'index_item',
+      layout: 'index_item_actions',
+      collection: @orders,
+      as: :model
+    )
+  %>
+<% end %>
+<%=
+  turbo_stream.replace(
+    'page_loading',
+    partial: 'page_loading',
+    locals: { all: @orders }
+  )
+%>
