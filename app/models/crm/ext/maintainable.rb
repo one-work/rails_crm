@@ -5,7 +5,7 @@ module Crm
     included do
       belongs_to :maintain, class_name: 'Crm::Maintain', optional: true, foreign_key: [:contact_id, :agent_id], primary_key: [:contact_id, :agent_id]
 
-      belongs_to :client, class_name: 'Crm::Client', optional: true
+      belongs_to :client, class_name: 'Crm::Client', counter_cache: true, optional: true
       accepts_nested_attributes_for :client
 
       belongs_to :contact, class_name: 'Crm::Contact', counter_cache: true, optional: true
