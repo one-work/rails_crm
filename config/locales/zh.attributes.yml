@@ -53,3 +53,6 @@ zh:
         note: 备注
         commission_ratio: 抽成比例
         client_id: 客户
+      trade/order:
+        client_id: 客户
+        contact_id: 联系人
