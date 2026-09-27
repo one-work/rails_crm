@@ -1,0 +1,12 @@
+<div class="fixed-grid has-3-cols">
+  <div class="grid gap-2">
+    <%=
+      render(
+        partial: 'crm_change_contact',
+        collection: @contacts,
+        as: :model,
+        locals: { con: 'factory/agent/productions' }
+      )
+    %>
+  </div>
+</div>

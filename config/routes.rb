@@ -222,6 +222,16 @@ Rails.app.routes.draw do
   namespace :crm, defaults: { business: 'crm' } do
     namespace :admin, defaults: { namespace: 'admin' } do
       root 'home#index'
+      resources :clients, only: [] do
+        collection do
+          post :change
+        end
+      end
+      resources :contacts, only: [] do
+        collection do
+          post :change
+        end
+      end
       concerns :maintaining
       resources :maintain_sources do
         collection do

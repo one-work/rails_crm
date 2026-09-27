@@ -16,6 +16,13 @@ module Crm
       @contacts = Contact.includes(:maintains, :pending_members).default_where(q_params).order(id: :desc).page(params[:page])
     end
 
+    def change
+      q_params = {}
+      q_params.merge! default_params
+
+      @contacts = Contact.default_where(q_params).order(id: :desc).page(params[:page])
+    end
+
     def cart
       q_params = {}
       q_params.merge! default_params

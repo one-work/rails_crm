@@ -22,6 +22,13 @@ module Crm
       @clients = Client.includes(:maintains).roots.default_where(q_params).page(params[:page]).per(params[:per])
     end
 
+    def change
+      q_params = {}
+      q_params.merge! default_params
+
+      @clients = Client.default_where(q_params).order(id: :desc).page(params[:page])
+    end
+
     def cart
       q_params = {}
       q_params.merge! default_params
