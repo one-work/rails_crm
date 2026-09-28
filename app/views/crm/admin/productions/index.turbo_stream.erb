@@ -8,7 +8,8 @@
       locals: {
         cart: @cart,
         item_con: 'trade/agent/items',
-        extra_options: { controller: controller_path }
+        extra_options: { controller: controller_path },
+        cart_options: { **params.permit(:dispatch, :produce_on, :scene_id, :desk_id, :station_id, :client_id, :contact_id), **session.to_h.slice('desk_id', 'station_id') }
       }
     )
   %>
