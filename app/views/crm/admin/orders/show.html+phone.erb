@@ -9,10 +9,18 @@
   <%= render partial: 'package_buttons', locals: { model: @order } %>
 <% end %>
 
-<%= render partial: 'order_detail', locals: { model: @order } %>
+<div class="card as-transparent">
+  <div class="card-header">
+    <strong class="size-7 text-grey has-border-left-primary">详情</strong>
+  </div>
+  <div class="card-content p-0">
+    <%= render 'show_table_form' %>
+    <%= render partial: 'order_detail', locals: { order: @order } %>
+  </div>
+</div>
 
 <% if @order.cart_promotes.present? %>
-<div class="card">
+<div class="card as-transparent">
   <div class="card-header">
     <strong class="size-7 text-grey has-border-left-primary">服务/促销</strong>
   </div>
