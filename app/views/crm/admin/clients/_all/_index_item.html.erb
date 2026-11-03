@@ -1,1 +1,3 @@
-<strong><%= model.name %></strong>
+<%= link_to({ action: 'show', id: model.id }) do %>
+  <strong><%= model.name %></strong>
+<% end %>

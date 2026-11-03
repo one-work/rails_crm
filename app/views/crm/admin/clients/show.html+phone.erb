@@ -16,6 +16,10 @@
       <strong><%= @client.addresses.count %></strong>
       <p><%= t('.addresses.index.title') %></p>
     <% end %>
+    <%= link_to({ controller: 'cards', client_id: model.id }, class: 'cell as-boxed has-column-centered p-4') do %>
+      <strong><%= @client.cards_count %></strong>
+      <p><%= t('.cards.index.title') %></p>
+    <% end %>
     <%= link_to({ controller: 'productions', client_id: model.id }, class: 'cell as-boxed has-column-centered p-4') do %>
       <%= svg_tag 'store' %>
       <span><%= t('.productions.index.title') %></span>

@@ -1,9 +1,4 @@
-<div class="as-bar">
-  <%= link_to({ controller: 'contacts' }, class: 'px-4') do %>
-    <%= svg_tag 'angle-left', kind: 'regular' %>
-  <% end %>
-  <div class="bar-title">
-    <span><%= @client.name %></span>
-  </div>
-  <i class="px-5"></i>
-</div>
+<%= render layout: 'top_bar_layout' do %>
+  <p><%= @client.name %></p>
+  <p><%= t('.title') %></p>
+<% end %>

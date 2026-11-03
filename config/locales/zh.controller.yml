@@ -121,6 +121,10 @@ zh:
       card_purchases:
         index:
           title: 续费明细
+      client:
+        contacts:
+          index:
+            title: 联系人
       contact:
         maintains:
           index:
