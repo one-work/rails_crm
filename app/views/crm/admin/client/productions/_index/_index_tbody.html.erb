@@ -1,7 +1,9 @@
+<% items = cart&.find_good_items(model.brother_ids, **(defined?(cart_options) ? cart_options : {})) %>
+
 <td>
   <%= link_to({ action: 'show', id: model.id }, class: 'is-several') do %>
     <%= image_tag model.logo.variant(resize_to_limit: [24, 24]), class: 'image is-24x24' if model.logo.attached? %>
-    <span><%= model.name %></span>
+    <span><%= model.word %></span>
   <% end %>
 </td>
 <td>
@@ -16,6 +18,30 @@
 </td>
 <td><%= model.price.to_money.format.html_safe %></td>
 <td>
-  <%= render partial: 'cart_item', locals: { item: @cart.init_cart_item(params, good_id: model.id, client_id: @client.id), cart: @cart, item_con: 'crm/admin/items' } %>
+  <% if model.can_select?(**params.permit(:dispatch).to_h.to_options) %>
+    <%=
+      button_to(
+        { action: 'show', id: model.id, **extra_options },
+        params: defined?(cart_options) ? cart_options : {},
+        class: 'button is-small is-primary'
+      ) do
+    %>
+      <%= svg_tag 'cart-plus' %>
+    <% end %>
+    <% if items.present? %>
+      <span class="tag is-badge is-danger"><%= items.size %></span>
+    <% end %>
+  <% elsif cart %>
+    <%=
+      render(
+        partial: 'cart_item',
+        locals: {
+          item: @cart.init_cart_item(params, good_id: model.id, client_id: @client.id),
+          cart: @cart,
+          item_con: 'crm/admin/items'
+        }
+      )
+    %>
+  <% end %>
 </td>
 <td></td>
