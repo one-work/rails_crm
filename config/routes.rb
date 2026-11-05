@@ -157,7 +157,11 @@ Rails.app.routes.draw do
           post :print
         end
       end
-      resources :addresses, controller: 'client/addresses'
+      resources :addresses, controller: 'client/addresses' do
+        collection do
+          post :search
+        end
+      end
       resources :notes, controller: 'client/notes'
       resources :maintains, controller: 'client/maintains'
       resources :children, controller: 'client/clients' do
