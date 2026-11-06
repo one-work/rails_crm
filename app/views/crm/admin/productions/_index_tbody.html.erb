@@ -8,13 +8,22 @@
   <table class="table is-borderless">
   <% model.parts.each do |part| %>
     <tr>
-      <td><span class="tag"><%# link_to part.name, { controller: 'products', action: 'show', id: part.id } %></span></td>
-      <td><%# part.price %></td>
+      <td><span class="tag"><%= part.title_short %></span></td>
+      <td><%= part.price %></td>
     </tr>
   <% end %>
   </table>
 </td>
 <td><%= model.price.to_money.format.html_safe %></td>
 <td class="text-centered">
-  <%= render partial: 'cart_item', locals: { item: @cart.init_cart_item(params, good_id: model.id), cart: @cart, item_con: 'items' } %>
+  <%=
+    render(
+      partial: 'cart_item',
+      locals: {
+        item: @cart.init_cart_item(params, good_id: model.id),
+        cart: @cart,
+        item_con: 'items'
+      }
+    )
+  %>
 </td>
