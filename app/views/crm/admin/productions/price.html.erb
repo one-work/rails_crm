@@ -1,0 +1,18 @@
+<%= render 'maintain_bar' %>
+
+<%= render layout: 'index_raw_table' do %>
+  <%=
+    render(
+      partial: 'index_tbody',
+      layout: 'index_tr',
+      collection: @productions,
+      as: :model,
+      locals: {
+        cart: @cart,
+        extra_options: { controller: controller_path }
+      }
+    )
+  %>
+<% end %>
+
+<%= paginate @productions %>
