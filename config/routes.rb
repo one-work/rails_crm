@@ -172,6 +172,7 @@ Rails.app.routes.draw do
           post :init_organ
         end
       end
+      resources :carts, controller: 'client/carts'
       resources :contacts, controller: 'client/contacts' do
         member do
           match :edit_assign, via: [:get, :post]

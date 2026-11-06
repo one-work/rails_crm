@@ -1,0 +1,37 @@
+<%= render 'maintain_bar' %>
+
+<ul class="breadcrumb">
+  <li><%= link_to t('.index.title'), { action: 'index' } %></li>
+  <li class="is-active"><%= t('.title') %></li>
+</ul>
+
+<div class="columns m-0">
+  <div class="column">
+    <table class="table is-fullwidth as-boxed">
+      <thead>
+        <%= render 'index_thead' %>
+      </thead>
+      <tbody>
+        <%= render partial: 'cart_item_show', layout: 'cart_item_show_layout', collection: @items, as: :item, locals: { cart: @cart, item_con: 'trade/agent/items' } %>
+        <%= render partial: 'cart_promote', layout: 'cart_promote_tr', collection: @cart.cart_promotes, as: :model %>
+      </tbody>
+      <%= render 'cart_footer' %>
+    </table>
+  </div>
+  <div class="column is-one-quarter">
+    <%= render partial: 'cart_form', locals: { cart: @cart } if @cart %>
+  </div>
+</div>
+<div class="has-block-centered px-3">
+<% if @cart.can_order? %>
+  <%= link_to({ controller: 'orders', action: 'cart', current_cart_id: @cart.id }, class: 'button is-medium is-primary') do %>
+    <span class="mr-1">结算</span>
+    <%= svg_tag 'angle-right' %>
+  <% end %>
+<% else %>
+  <button class="button is-primary" disabled>
+    <span class="mr-1">结算</span>
+    <%= svg_tag 'angle-right' %>
+  </button>
+<% end %>
+</div>

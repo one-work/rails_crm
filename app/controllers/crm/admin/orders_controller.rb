@@ -1,5 +1,5 @@
 module Crm
-  class Admin::OrdersController < Trade::Admin::OrdersController
+  class Admin::OrdersController < Trade::Agent::OrdersController
     include Controller::Admin
     before_action :set_common_maintain
     before_action :set_addresses, :set_new_order, only: [:new, :create]
@@ -26,7 +26,6 @@ module Crm
       q_params.merge! params.permit(:payment_status, :state)
 
       @orders = @client.orders.default_where(q_params).includes(:payment_strategy).order(id: :desc).page(params[:page])
-
     end
 
     def add
