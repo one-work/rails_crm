@@ -1,5 +1,5 @@
 module Crm
-  class Admin::ItemsController < Trade::Admin::ItemsController
+  class Admin::ItemsController < Trade::Agent::ItemsController
     include Controller::Admin
     before_action :set_common_maintain
     before_action :set_cart, only: [:create, :update, :destroy]
