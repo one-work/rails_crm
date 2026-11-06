@@ -7,4 +7,6 @@
 
 <%= render 'index_actions' %>
 
-<%= render 'show_table' %>
+<%= render layout: 'show_layout', locals: { model: @order } do %>
+  <%= render 'show_table' %>
+<% end %>
