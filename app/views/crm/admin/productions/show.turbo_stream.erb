@@ -1,0 +1,10 @@
+<%=
+  turbo_stream.append_body(
+    partial: 'show',
+    layout: 'modal_show_nofoot',
+    locals: {
+      model: @production,
+      item_con: 'crm/admin/items'
+    }
+  )
+%>
