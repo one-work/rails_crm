@@ -1,16 +1,20 @@
-name: Git Collect
+name: Engine Collect
 on:
   push:
     branches:
       - main
 jobs:
   build:
+<<<<<<< HEAD:.github/workflows/git.yml
     name: Git Collect
+=======
+    name: Engine Collect
+>>>>>>> 42074fecc54cc8dfae789f81de40c2b47f29003c:.github/workflows/engine.yml
     environment: dev
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: ${{ github.repository_owner }}/engine
           ref: main
