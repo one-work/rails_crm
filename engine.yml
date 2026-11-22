@@ -1,17 +1,18 @@
-name: Git Collect
+name: Engine Collect
 on:
   push:
     branches:
       - main
 jobs:
   build:
-    name: Git Collect
+    name: Engine Collect
+    environment: dev
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
-          repository: work-design/engine
+          repository: ${{ github.repository_owner }}/engine
           ref: main
           submodules: true
           token: ${{ secrets.AK }}
@@ -23,5 +24,5 @@ jobs:
           git status
           git remote -v
           git add . -v
-          git commit -m ${{ github.event.repository.updated_at }}
+          git commit -m "${{ github.event.head_commit.timestamp }} - ${{ github.event.repository.name }}"
           git push
